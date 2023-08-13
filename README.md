@@ -10,7 +10,7 @@
     If you have any ideas, encounter installation issues, or come across errors while using Fewer Stealer, feel free to ask and discuss everything on our <a href="https://github.com/paralox399/fewer-stealer/issues">GitHub Issues</a> page.
 </p>
 
-## 📝 Features
+## 📝 Featuress
 
 ### 🧊 Desktop Wallets
    `Binance, Zcash, Armory, Bytecoin, Jaxx, Exodus, Ethereum, Electrum, AtomicWallet, Guarda, Coinomi`
