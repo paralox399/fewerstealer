@@ -1,9 +1,9 @@
 <h1 align="center">
 🛡️ Fewer Stealer v1.0
-    [Telegram server][https://t.me/fewerstealer]
+
+<a href="https://t.me/fewerstealer">Telegram server</a>
 
 </h1>
-
 <p align="center">
     <strong>Disclaimer:</strong> This software is intended for personal educational and sandbox testing purposes only. We are not responsible for any damages that may occur as a result of its usage. Use it at your own risk.
 </p>
