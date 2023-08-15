@@ -1,5 +1,7 @@
 <h1 align="center">
 🛡️ Fewer Stealer v1.0
+    [Telegram server][https://t.me/fewerstealer]
+
 </h1>
 
 <p align="center">
@@ -47,6 +49,7 @@ Fewer Stealer provides the following features for supported browsers:
 - ✅ Telegram Data Extraction
 - ✅ Wallets: Supports 62 of the most popular crypto wallets.
 - ✅ Exodus wallet injection (get the password whenever the user logs in the wallet)
+- ✅ FTP stealer (FileZilla)
 
 ## 🛡️ Additional
 
@@ -60,10 +63,8 @@ Fewer Stealer provides the following features for supported browsers:
 
 Here are some of the upcoming features and improvements we plan to add to Fewer Stealer:
 
-> - More grabbers (VPN's, Gaming, Messengers,Steam Sessions,RedditSessions,Twitter Session,Minecraft Session stealer,FTP stealer (FileZilla))
+> - More grabbers (VPN's, Gaming, Messengers,Steam Sessions,RedditSessions,Twitter Session,Minecraft Session stealer,)
 > - Firefox stealer
 
 Feel free to check back for updates on these exciting enhancements!
 
-
----
