@@ -36,23 +36,21 @@ Fewer Stealer supports the following browsers:
 Fewer Stealer provides the following features for supported browsers:
 
 - ✅ Passwords: Extracts passwords from all browsers into a single file.
-- ✅ Cookies: Sorts each browser and profile into separate files.
+- ✅ Cookies: Sorts each browser and profile into separate files. (Auto Cookie Parser each browser)
 - ✅ Discord Token: Retrieves Discord tokens.
-- ✅ Discord Info: Collects username, phone number, email, billing details, nitro status, and backup codes.
-- ✅ Discord Friends: Captures friends' information, highlighting those with rare badges.
 - ✅ Instagram Session Stealer & Validator
+- ✅ Reddit Session stealer & validator
 - ✅ Roblox Session Stealer & Validator
 - ✅ TikTok Session Stealer & Validator
 - ✅ Autofills: Gathers autofill data from all browsers into a single file.
 - ✅ Information: Provides brief device and internet connection details, including country IP.
-- ✅ Telegram Data Extraction
+- ✅ Telegram Session stealer
 - ✅ Wallets: Supports 62 of the most popular crypto wallets.
 - ✅ Exodus wallet injection (get the password whenever the user logs in the wallet)
 - ✅ FTP stealer (FileZilla)
 
 ## 🛡️ Additional
 
-- ❗️ Validates a found discord token and then sends it to your discord webhook
 - ❗️ Automatic obfuscation when building
 - ❗️ FUD 0/66
 - ❗️ Source is highly obfuscated
@@ -62,7 +60,7 @@ Fewer Stealer provides the following features for supported browsers:
 
 Here are some of the upcoming features and improvements we plan to add to Fewer Stealer:
 
-> - More grabbers (VPN's, Gaming, Messengers,Steam Sessions,RedditSessions,Twitter Session,Minecraft Session stealer,)
+> - More grabbers (VPN's, Gaming, Messengers,Steam Sessions,Twitter Session,Minecraft Session stealer,)
 > - Firefox stealer
 
 Feel free to check back for updates on these exciting enhancements!
