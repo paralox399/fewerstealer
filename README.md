@@ -12,8 +12,6 @@
 
 ## 📝 Features
 
-### 🧊 Desktop Wallets
-   `Binance, Zcash, Armory, Bytecoin, Jaxx, Exodus, Ethereum, Electrum, AtomicWallet, Guarda, Coinomi`
 
 ### 🦊 Browser Wallets
    `Trust, Metamask, BinanceChain, Phantom, TronLink, Ronin, Exodus, Coin98, Authenticator, MathWallet, YoroiWallet, GuardaWallet, JaxxxLiberty, Wombat, EVERWallet, KardiaChain, XDEFI, Nami, TerraStation, MartianAptos, TON, Keplr, CryptoCom, PetraAptos, OKX, Sollet, Sender, Sui, SuietSui, Braavos, FewchaMove, EthosSui, ArgentX, NiftyWallet, BraveWallet, EqualWallet, BitAppWallet, iWallet, AtomicWallet, MewCx, GuildWallet, SaturnWallet, HarmonyWallet, PaliWallet, BoltX, LiqualityWallet, MaiarDeFiWallet, TempleWallet, Metamask_Edge, Ronin_Edge, Yoroi_Edge, Authenticator_Edge, MetaMask_Opera`
