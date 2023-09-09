@@ -11,7 +11,7 @@ Follow these steps to set up the Fewer Stealer tool:
 2. Open the "sa.js" file.
 3. Locate the line: `const webhook3939 = "YOUR_DISCORD_WEBHOOK_PUT_HERE";`
 4. Replace `"YOUR_DISCORD_WEBHOOK_PUT_HERE"` with your actual Discord webhook URL.
-5. Check 1032. (`soon injection if you have injection code put you here link`)
+5. Check 1421. (`soon injection if you have injection code put you here link`)
 
 
 
