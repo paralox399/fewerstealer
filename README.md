@@ -1,6 +1,6 @@
 <h1 align="center">
 🛡️ Fewer Stealer v1.0
-    
+</h1>
 You Can Contact Me On Discord : @xfixxy3
 </h1>
 <p align="center">
