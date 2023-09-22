@@ -1,0 +1,47 @@
+{
+  "name": "build",
+  "version": "1.0.0",
+  "description": "Fewer",
+  "main": "gayy.js",
+  "author": "Fewer",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "electron-builder": "electron-builder --win"
+  },
+  "build": {
+    "win": {
+      "icon": "icon.ico",
+      "files": [
+        "!source/",
+        "!build/",
+        "!32392.js",
+        "!crypter.js",
+        "!icon.ico",
+        "!install.bat"
+      ],
+      "target": [
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "directories": {
+      "output": "build"
+    }
+  },
+  "dependencies": {
+    "adm-zip": "^0.5.10",
+    "axios": "^1.4.0",
+    "crypto": "^1.0.1",
+    "os": "^0.1.2",
+    "sqlite3": "^5.1.6"
+  },
+  "devDependencies": {
+    "electron": "^23.0.0",
+    "electron-builder": "^23.6.0"
+  }
+}
