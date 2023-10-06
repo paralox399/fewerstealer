@@ -1,8 +1,6 @@
 <h1 align="center">
 🛡️ Fewer Stealer v1.0
 </h1>
-You Can Contact Me On Discord : @xfixxy3
-</h1>
 <p align="center">
     <strong>Disclaimer:</strong> This software is intended for personal educational and sandbox testing purposes only. We are not responsible for any damages that may occur as a result of its usage. Use it at your own risk.
 </p>
@@ -50,7 +48,7 @@ Fewer Stealer provides the following features for supported browsers:
 ## 🛡️ Additional
 
 - ❗️ Automatic obfuscation when building
-- ❗️ FUD 0/66
+- ❗️ FUD 0/69
 - ❗️ Source is highly obfuscated
 - ❗️ Sends all files to your discord webhook
 
