@@ -5,9 +5,7 @@
     <strong>Disclaimer:</strong> This software is intended for personal educational and sandbox testing purposes only. We are not responsible for any damages that may occur as a result of its usage. Use it at your own risk.
 </p>
 
-<p align="center">
-    If you have any ideas, encounter installation issues, or come across errors while using Fewer Stealer, feel free to ask and discuss everything on our [GitHub Issues](https://github.com/paralox399/fewer-stealer/issues) page.
-</p>
+
 
 ## 📝 Features
 
@@ -59,3 +57,13 @@ Here are some of the upcoming features and improvements we plan to add to Fewer 
 - Firefox stealer
 
 Feel free to check back for updates on these exciting enhancements!
+
+## Screenshots 📸
+
+![Uygulama Ekran Görüntüsü](https://i.hizliresim.com/plkx5sm.PNG)
+![Uygulama Ekran Görüntüsü](https://i.hizliresim.com/gr7myuh.PNG)
+![Uygulama Ekran Görüntüsü](https://i.hizliresim.com/fo4e0g7.PNG)
+![Uygulama Ekran Görüntüsü](https://i.hizliresim.com/f8i51jl.PNG)
+![Uygulama Ekran Görüntüsü](https://i.hizliresim.com/btuo7y9.PNG)
+![Uygulama Ekran Görüntüsü](https://i.hizliresim.com/31quiil.PNG)
+![Uygulama Ekran Görüntüsü](https://i.hizliresim.com/kjoovyy.PNG)
