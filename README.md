@@ -29,7 +29,7 @@ Fewer Stealer supports the following browsers:
 Fewer Stealer provides the following features for supported browsers:
 
 - 🔑 Password Grabber - Extracts passwords from all browsers into a single file.
-- 🍪 Cookie Grabber - Sorts each browser and profile into separate files. (Auto Cookie Parser for each browser)
+- 🍪 Cookie Grabber - Sorts each browser and profile into separate files. (Auto Cookie Parser for each browser) ( All Browser one zip cookies.zip)
 - 📞 Discord Token Stealer - Retrieves Discord tokens.
 - 🍪 AutoFill Stealer - Gathers autofill data from all browsers into a single file.
 - ✅ Information: Provides brief device and internet connection details, including country IP.
