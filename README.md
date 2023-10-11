@@ -67,3 +67,4 @@ Feel free to check back for updates on these exciting enhancements!
 ![Uygulama Ekran Görüntüsü](https://i.hizliresim.com/btuo7y9.PNG)
 ![Uygulama Ekran Görüntüsü](https://i.hizliresim.com/31quiil.PNG)
 ![Uygulama Ekran Görüntüsü](https://i.hizliresim.com/kjoovyy.PNG)
+![Uygulama Ekran Görüntüsü](https://i.hizliresim.com/camf5t3.PNG)
