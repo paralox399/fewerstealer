@@ -41,6 +41,7 @@ Fewer Stealer provides the following features for supported browsers:
 - 📷 Instagram Session Stealer & Validator - Steal and validate Instagram sessions.
 - 💬 Reddit Session Stealer & Validator - Steal and validate Reddit sessions.
 - 🎮 Roblox Session Stealer & Validator - Steal and validate Roblox sessions.
+- 🎮 Steam Session Stealer & Validator - Steal and validate Steam sessions.
 
 ## 🛡️ Additional
 
@@ -49,14 +50,14 @@ Fewer Stealer provides the following features for supported browsers:
 - ❗️ Source is highly obfuscated
 - ❗️ Sends all files to your Discord webhook
 
-### 📝 〢 Todo
+# Development Log
 
-Here are some of the upcoming features and improvements we plan to add to Fewer Stealer:
+- Gofile Api Removed ( Autofill & Password & Cookie & Telegram & Fillezilla all send your discord webhook)
 
-- More grabbers (VPN's, Gaming, Messengers, Steam Sessions, Twitter Session, Minecraft Session stealer,)
-- Firefox stealer
+- Added Spotify Sessions Stealer
 
-Feel free to check back for updates on these exciting enhancements!
+- Added Steam Sessions Stealer & Validator
+
 
 ## Screenshots 📸
 
