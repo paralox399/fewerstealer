@@ -41,7 +41,7 @@ Fewer Stealer provides the following features for supported browsers:
 - 📷 Instagram Session Stealer & Validator - Steal and validate Instagram sessions.
 - 💬 Reddit Session Stealer & Validator - Steal and validate Reddit sessions.
 - 🎮 Roblox Session Stealer & Validator - Steal and validate Roblox sessions.
-- 🎮 Steam Session Stealer & Validator - Steal and validate Steam sessions.
+
 
 ## 🛡️ Additional
 
@@ -52,20 +52,19 @@ Fewer Stealer provides the following features for supported browsers:
 
 # Development Log
 
-- Gofile Api Removed ( Autofill & Password & Cookie & Telegram & Fillezilla all send your discord webhook)
+- Gofile Api Removed (  all send your discord webhook)
 
 - Added Spotify Sessions Stealer
 
-- Added Steam Sessions Stealer & Validator
-
+- Added Special Key System : https://buildandwatch.net/createkey
 
 ## Screenshots 📸
 
-![Uygulama Ekran Görüntüsü](https://i.hizliresim.com/plkx5sm.PNG)
-![Uygulama Ekran Görüntüsü](https://i.hizliresim.com/gr7myuh.PNG)
-![Uygulama Ekran Görüntüsü](https://i.hizliresim.com/fo4e0g7.PNG)
-![Uygulama Ekran Görüntüsü](https://i.hizliresim.com/f8i51jl.PNG)
-![Uygulama Ekran Görüntüsü](https://i.hizliresim.com/btuo7y9.PNG)
-![Uygulama Ekran Görüntüsü](https://i.hizliresim.com/31quiil.PNG)
-![Uygulama Ekran Görüntüsü](https://i.hizliresim.com/kjoovyy.PNG)
-![Uygulama Ekran Görüntüsü](https://i.hizliresim.com/camf5t3.PNG)
+![Uygulama Ekran Görüntüsü](https://resmim.net/cdn/2023/11/05/ZfQClo.png)
+![Uygulama Ekran Görüntüsü](https://resmim.net/cdn/2023/11/05/ZfQj2L.png)
+![Uygulama Ekran Görüntüsü](https://resmim.net/cdn/2023/11/05/ZfQX6T.png)
+![Uygulama Ekran Görüntüsü](https://resmim.net/cdn/2023/11/05/ZfQTY1.png)
+![Uygulama Ekran Görüntüsü](https://resmim.net/cdn/2023/11/05/ZfQNWG.png)
+![Uygulama Ekran Görüntüsü](https://resmim.net/cdn/2023/11/05/ZfQmLC.png)
+![Uygulama Ekran Görüntüsü](https://resmim.net/cdn/2023/11/05/ZfQW0i.png)
+
