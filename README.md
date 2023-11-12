@@ -5,7 +5,11 @@
     <strong>Disclaimer:</strong> This software is intended for personal educational and sandbox testing purposes only. We are not responsible for any damages that may occur as a result of its usage. Use it at your own risk.
 </p>
 
+## 📝 Key System
 
+### To use Fewer Stealer, you need to create a key at https://buildandwatch.net/createkey.
+### To update your 'Fewer Stealer key,' please visit the following link: https://buildandwatch.net/updatekey
+### To delete your 'Fewer Stealer key,' please visit the following link: https://buildandwatch.net/deletekey
 
 ## 📝 Features
 
@@ -67,4 +71,5 @@ Fewer Stealer provides the following features for supported browsers:
 ![Uygulama Ekran Görüntüsü](https://resmim.net/cdn/2023/11/05/ZfQNWG.png)
 ![Uygulama Ekran Görüntüsü](https://resmim.net/cdn/2023/11/05/ZfQmLC.png)
 ![Uygulama Ekran Görüntüsü](https://resmim.net/cdn/2023/11/05/ZfQW0i.png)
-
+![Uygulama Ekran Görüntüsü](https://img.imgyukle.com/2023/11/13/yCX1W8.png)
+![Uygulama Ekran Görüntüsü](https://img.imgyukle.com/2023/11/13/yCXzXn.png)
