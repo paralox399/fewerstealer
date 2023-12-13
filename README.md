@@ -5,11 +5,13 @@
     <strong>Disclaimer:</strong> This software is intended for personal educational and sandbox testing purposes only. We are not responsible for any damages that may occur as a result of its usage. Use it at your own risk.
 </p>
 
+Description;
+
+This project employs the "Fewer API" service and blocks access from IP addresses originating in Turkey. Therefore, if you are unable to generate an API key from Turkey and your target is Turkish, retrieving account information will not be possible.
+
 ## 📝 Key System
 
-### To use Fewer Stealer, you need to create a key at https://buildandwatch.net/createkey.
-### To update your 'Fewer Stealer key,' please visit the following link: https://buildandwatch.net/updatekey
-### To delete your 'Fewer Stealer key,' please visit the following link: https://buildandwatch.net/deletekey
+### To use Fewer Stealer, you need to create a key at https://buildandwatch.net/createkey
 
 ## 📝 Features
 
