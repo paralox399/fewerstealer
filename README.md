@@ -5,6 +5,10 @@
     <strong>Disclaimer:</strong> This software is intended for personal educational and sandbox testing purposes only. We are not responsible for any damages that may occur as a result of its usage. Use it at your own risk.
 </p>
 
+Contact Address : 
+
+discord : @xfixxy6
+
 Description;
 
 This project employs the "Fewer API" service and blocks access from IP addresses originating in Turkey. Therefore, if you are unable to generate an API key from Turkey and your target is Turkish, retrieving account information will not be possible.
