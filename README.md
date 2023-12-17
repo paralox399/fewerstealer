@@ -64,13 +64,13 @@ Fewer Stealer provides the following features for supported browsers:
 
 - Gofile Api Removed (  all send your discord webhook)
 
+- Added Webhook Protection
+
 - Added Spotify Sessions Stealer
 
 - Added Special Key System : https://buildandwatch.net/createkey
 
 ## Screenshots 📸
-![Uygulama Ekran Görüntüsü](https://github.com/paralox399/fewerstealer/assets/54511577/36df0cd2-451c-4409-b847-10222cf3344c)
-![Uygulama Ekran Görüntüsü](https://github.com/paralox399/fewerstealer/assets/54511577/78bf4188-e39b-4be3-857b-7908e01439b6)
 ![Uygulama Ekran Görüntüsü](https://resmim.net/cdn/2023/11/05/ZfQClo.png)
 ![Uygulama Ekran Görüntüsü](https://resmim.net/cdn/2023/11/05/ZfQj2L.png)
 ![Uygulama Ekran Görüntüsü](https://resmim.net/cdn/2023/11/05/ZfQX6T.png)
