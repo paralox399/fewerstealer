@@ -9,7 +9,7 @@ Contact Address :
 
 discord : @xfixxy6
 
-Description;
+Descriptionm;
 
 This project employs the "Fewer API" service and blocks access from IP addresses originating in Turkey. Therefore, if you are unable to generate an API key from Turkey and your target is Turkish, retrieving account information will not be possible.
 
