@@ -25,7 +25,6 @@ Fewer Stealer supports the following browsers:
 - Chrome
 - Edge
 - Brave
-- Opera
 - OperaGX
 - OperaNeon
 - Yandex
